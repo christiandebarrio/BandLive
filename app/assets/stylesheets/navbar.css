@@ -1,0 +1,93 @@
+.grad-navbar {
+  background: #FC744F; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #FC744F , #FE4D55); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #FC744F, #FE4D55); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #FC744F, #FE4D55); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #FC744F , #FE4D55); /* Standard syntax */
+}
+
+.navbar {
+  background-color: #2C2A2A;
+  height: 104px;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-header {
+  width: 150px;
+  margin-top: 8px;
+}
+
+.navbar-header img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-menu {
+  margin-top: 27px;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-default .navbar-nav li a {
+  color: #fff;
+  font-size: 13pt;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav li a:active {
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: 0;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.btn-default {
+    color: #fff;
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    border-radius: 15px;
+    text-transform: uppercase;
+    padding: 5px 60px;
+    margin: 7px 20px;
+}
+
+.btn-default:hover {
+    color: #FE4D55;
+    background-color: #f4f8fb;
+    border-color: #fff;
+}
+
+.btn-default.active.focus, 
+.btn-default.active:focus,
+.btn-default.active:hover, 
+.btn-default:active.focus, 
+.btn-default:active:focus, 
+.btn-default:active:hover, 
+.open>.dropdown-toggle.btn-default.focus, 
+.open>.dropdown-toggle.btn-default:focus, 
+.open>.dropdown-toggle.btn-default:hover {
+    color: #FE4D55;
+    background-color: #e6e6e6;
+    border-color: #fff;
+}
