@@ -1,0 +1,20 @@
+<div class="content container">
+  <section class="venues-show">
+    <div class="col-md-4">
+      <div class="show-image">
+        <%= image_tag @venue.generate_photo_url(@venue.name) %>
+      </div>
+    </div>
+    <div class="show-content col-md-8">
+      <h1 class="venues-name">
+        <%= @venue.name %>
+      </h1>
+      <p>email: <%= @venue.email %></p>
+      <p>address: <%= @venue.address %></p> 
+    </div>
+  </section>
+
+  <section class="container col-md-12 next-concerts">
+    <h1>Next Concerts</h1>
+  </section>
+</div>

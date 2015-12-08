@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :participants, only: [:show]
   end
 
+  resources :venues, only: [:index, :show]
+
   get "/login" => "login#show"
   
   # The priority is based upon order of creation: first created -> highest priority.

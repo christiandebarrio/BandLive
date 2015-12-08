@@ -1,0 +1,16 @@
+<div class="col-md-3 col-sm-6">
+  <a href="<%= venue_path(venue) %>" id="panel-link">
+    <article class="panel">
+      <div class="panel-image">
+        <%= image_tag venue.generate_photo_url(venue.name) %>
+      </div>
+      <header>
+        <h1><%= venue.name %></h1>
+      </header>
+      <div class="panel-content">
+        <p>email: <%= venue.email %></p>
+        <p>address: <%= venue.address %></p>        
+      </div>
+    </article>
+  </a>
+</div>

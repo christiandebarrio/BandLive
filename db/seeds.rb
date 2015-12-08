@@ -18,6 +18,10 @@ Participant.create(name: "julia",
                    email: "julia@email.com", 
                    instrument: "guitar & vocals")
 
+francis = Participant.find_by_id(1)
+eric = Participant.find_by_id(2)
+julia = Participant.find_by_id(3)
+
 Band.create(name: "Topper Chopper", 
             gender: "rock", 
             bandtype: "versions", 
@@ -30,12 +34,19 @@ Band.create(name: "Cardigan",
             city: "Cuenca", 
             language: "english")
 
-francis = Participant.find_by_id(1)
-eric = Participant.find_by_id(2)
-julia = Participant.find_by_id(3)
-
 topper_chopper = Band.find_by_id(1)
 cardigan = Band.find_by_id(2)
+
+Venue.create(name: "Moby Dick",
+             email: "mobydick@email.com",
+             address: "Av. de Brasil, 5, 28020 Madrid")
+
+Venue.create(name: "Honky Tonk",
+             email: "honkytonk@email.com",
+             address: "Calle Covarrubias, 24, 28010 Madrid")
+
+moby_dick = Venue.find_by_id(1)
+honky_tonk = Venue.find_by_id(2)
 
 topper_chopper.participants << francis
 topper_chopper.participants << eric

@@ -1,0 +1,8 @@
+<div class="content container">
+  <h1>Venues</h1>
+  <section class="index-pannels">
+    <% @venues.each do |venue| %>
+      <%= render 'partials/panels/panel_venue', venue: venue %>
+    <% end %>
+  </section>
+</div>
