@@ -1,0 +1,25 @@
+<div class="content container">
+  <section class="concerts-show">
+    <div class="col-md-4">
+      <div class="show-image">
+        <%= image_tag @band.generate_photo_url(@band.name) %>
+      </div>
+    </div>
+    <div class="show-content col-md-8">
+      <h1 class="concerts-band-name">
+        <%= link_to @band.name, band_path(@band) %>
+      </h1>
+      <h2 class="concerts-venue-name">
+        <%= link_to @venue.name, venue_path(@venue) %>
+      </h2>
+      <h3>
+        Gender <%= @band.gender %>-<%= @band.bandtype %> music
+      </h3>
+      <p>date: <%= @concert.date %></p>
+      <p>hour: <%= @concert.time %></p>
+      <p>address: <%= @venue.address %></p>
+      
+      <p>language: <%= @band.language %></p>
+    </div>
+  </section>
+</div>

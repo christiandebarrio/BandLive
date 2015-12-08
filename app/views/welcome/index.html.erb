@@ -24,14 +24,12 @@
   <section class="index-panels">
     <h1>Concerts</h1>
 
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
-    <%= render "partials/panels/panel_concert" %>
+    <% @concerts.each do |concert| %>
+      <%= render 'partials/panels/panel_concert', 
+                 concert: concert, 
+                 band: Band.find_by_id(concert.band_id),
+                 venue: Venue.find_by_id(concert.venue_id)%>
+    <% end %>
    
   </section>
 </div>

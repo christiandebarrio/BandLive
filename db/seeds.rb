@@ -51,3 +51,23 @@ honky_tonk = Venue.find_by_id(2)
 topper_chopper.participants << francis
 topper_chopper.participants << eric
 cardigan.participants << julia
+
+Concert.create(band_id: topper_chopper.id,
+             venue_id: moby_dick.id,
+             date: "15/12/2015",
+             time: "21:00")
+
+Concert.create(band_id: cardigan.id,
+             venue_id: moby_dick.id,
+             date: "16/12/2015",
+             time: "22:00")
+
+Concert.create(band_id: cardigan.id,
+             venue_id: honky_tonk.id,
+             date: "21/12/2015",
+             time: "23:00")
+
+Concert.create(band_id: topper_chopper.id,
+             venue_id: honky_tonk.id,
+             date: "20/12/2015",
+             time: "20:00")

@@ -1,20 +1,22 @@
 <div class="col-md-3 col-sm-6">
-  <article class="panel">
-    <div class="panel-image">
-      <%= image_tag "bands/topper-chopper.jpg" %>
-    </div>
-    <footer>
-      <p><span class="panel-date">06 dec</span> at <a href="" class="vanue">place</a></p>
-    </footer>
-    <header>
-      <h1>Topper Chopper</h1>
-    </header>
-    <div class="panel-content">
-      <p>Gender Rock-Original Music</p>
-      <p>Language - English</p>
-    </div>
-    <div class="social-share">
-      <%= link_to "share" , "#fakelink" ,class: "btn btn-green"%>
-    </div>
-  </article>
+  <a href="<%= concert_path(concert) %>" id="panel-link">
+    <article class="panel">
+      <div class="panel-image">
+        <%= image_tag band.generate_photo_url(band.name) %>
+      </div>
+      <footer>
+        <p><span class="panel-date"><%= concert.date.day %> <%= concert.date.strftime("%b") %></span> at <%= venue.name %></p>
+      </footer>
+      <header>
+        <h1><%= band.name %></h1>
+      </header>
+      <div class="panel-content">
+        <p>Gender <%= band.gender %>-<%= band.bandtype %> music</p>
+        <p>Language - <%= band.language %></p>
+      </div>
+      <div class="social-share">
+        <%= link_to "share" , "#fakelink" ,class: "btn btn-green"%>
+      </div>
+    </article>
+  </a>
 </div>
