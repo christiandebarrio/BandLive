@@ -1,3 +1,14 @@
 // Place all the styles related to the bands controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bands-show-image {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 4px 4px 30px -9px #A6A8AB;
+}
+
+.bands-show-image img {
+  width: 100%;
+
+}

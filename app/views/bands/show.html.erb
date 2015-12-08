@@ -1,19 +1,26 @@
 <div class="content container">
   <section class="bands-show">
-    <h1 class="bands-name"><%= @band.name %>
-    </h1>
-    <p>participants:</p>
-    <ul>
-      <% @band.participants.each do |participant| %>
-         <li>
-           <%= participant.name %>:
-           <%= participant.instrument %>           
-         </li>   
-      <% end %>    
-    </ul>
-    <p>gender: <%= @band.gender %></p>
-    <p>band type: <%= @band.bandtype %></p>
-    <p>city: <a href=""><%= @band.city %></a></p>
-    <p>language: <a href=""><%= @band.language %></a></p>
+    <div class="col-md-4">
+      <div class="bands-show-image">
+        <%= image_tag @band.generate_photo_url(@band.name) %>
+      </div>
+    </div>
+    <div class="bands-show-content col-md-8">
+      <h1 class="bands-name"><%= @band.name %>
+      </h1>
+      <p>participants:</p>
+      <ul>
+        <% @band.participants.each do |participant| %>
+           <li>
+             <%= participant.name %>:
+             <%= participant.instrument %>           
+           </li>   
+        <% end %>    
+      </ul>
+      <p>gender: <%= @band.gender %></p>
+      <p>band type: <%= @band.bandtype %></p>
+      <p>city: <%= @band.city %></p>
+      <p>language: <%= @band.language %></p>
+    </div>
   </section>
 </div>
