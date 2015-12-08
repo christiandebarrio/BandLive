@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root "welcome#index"
 
   resources :bands, only: [:show, :index] do
     resources :participants, only: [:show]
   end
+
+  get "/login" => "login#show"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
