@@ -6,4 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Participant.create(name: "Francis", email: "francisvitro@gmail.com", instrument: "drums")
+Participant.create(name: "Francis", 
+                   email: "francisvitro@gmail.com", 
+                   instrument: "drums")
+
+Band.create(name: "Topper Chopper", 
+            gender: "rock", 
+            band_type: "versions", 
+            city: "Madrid", 
+            language: "english and spanishe")
