@@ -1,7 +1,7 @@
 <div class="content container">
   <section class="bands-index">
     <% @bands.each do |band| %>
-      <%= render 'partials/panels/panel_band' %>
+      <%= render 'partials/panels/panel_band', band: band %>
     <% end %>
   </section>
 </div>
