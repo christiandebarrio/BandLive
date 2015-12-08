@@ -1,0 +1,19 @@
+<div class="content container">
+  <section class="band-show">
+    <h1 class="band-name"><%= @band.name %>
+    </h1>
+    <p>participants:</p>
+    <ul>
+      <% @band.participants.each do |participant| %>
+         <li>
+           <%= participant.name %>:
+           <%= participant.instrument %>           
+         </li>   
+      <% end %>    
+    </ul>
+    <p>gender: <%= @band.gender %></p>
+    <p>band type: <%= @band.band_type %></p>
+    <p>city: <a href=""><%= @band.city %></a></p>
+    <p>language: <a href=""><%= @band.language %></a></p>
+  </section>
+</div>

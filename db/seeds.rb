@@ -14,7 +14,7 @@ Band.create(name: "Topper Chopper",
             gender: "rock", 
             band_type: "versions", 
             city: "Madrid", 
-            language: "english and spanishe")
+            language: "english and spanish")
 
 francis = Participant.find_by_id(1)
 topper_chopper = Band.find_by_id(1)
