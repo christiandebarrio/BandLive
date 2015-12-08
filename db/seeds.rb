@@ -10,6 +10,10 @@ Participant.create(name: "Francis",
                    email: "francisvitro@gmail.com", 
                    instrument: "drums")
 
+Participant.create(name: "Eric", 
+                   email: "eric@email.com", 
+                   instrument: "guitar and vocals")
+
 Band.create(name: "Topper Chopper", 
             gender: "rock", 
             band_type: "versions", 
@@ -17,6 +21,8 @@ Band.create(name: "Topper Chopper",
             language: "english and spanish")
 
 francis = Participant.find_by_id(1)
+eric = Participant.find_by_id(2)
 topper_chopper = Band.find_by_id(1)
 
 topper_chopper.participants << francis
+topper_chopper.participants << eric
