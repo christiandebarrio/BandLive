@@ -1,11 +1,19 @@
 <div class="content container">
   <section class="participant-show">
-    <h1 class="participant-name"><%= @participant.name %>
-    </h1>
-    <p>email: <%= @participant.email %></p>
-    <p>instrument: <%= @participant.instrument %></p>
-    <p>band: 
-      <%= link_to @band.name, band_path(@band.id) %>
-    </p>
+    <div class="col-md-4">
+      <div class="show-image">
+        <%= image_tag @participant.generate_photo_url(@participant.name) %>
+      </div>
+    </div>
+    <div class="show-content col-md-8">
+      <h1 class="participant-name">
+        <%= @participant.name %>
+      </h1>
+      <p>email: <%= @participant.email %></p>
+      <p>instrument: <%= @participant.instrument %></p>
+      <p>band: 
+        <%= link_to @band.name, band_path(@band.id) %>
+      </p>
+    </div>
   </section>
 </div>

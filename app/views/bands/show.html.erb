@@ -1,12 +1,13 @@
 <div class="content container">
   <section class="bands-show">
     <div class="col-md-4">
-      <div class="bands-show-image">
+      <div class="show-image">
         <%= image_tag @band.generate_photo_url(@band.name) %>
       </div>
     </div>
-    <div class="bands-show-content col-md-8">
-      <h1 class="bands-name"><%= @band.name %>
+    <div class="show-content col-md-8">
+      <h1 class="bands-name">
+        <%= @band.name %>
       </h1>
       <p>participants:</p>
       <ul>
