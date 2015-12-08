@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :bands, only: [:show] do
+  resources :bands, only: [:show, :index] do
     resources :participants, only: [:show]
   end
   

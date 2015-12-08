@@ -1,6 +1,6 @@
 <div class="content container">
-  <section class="band-show">
-    <h1 class="band-name"><%= @band.name %>
+  <section class="bands-show">
+    <h1 class="bands-name"><%= @band.name %>
     </h1>
     <p>participants:</p>
     <ul>
@@ -12,7 +12,7 @@
       <% end %>    
     </ul>
     <p>gender: <%= @band.gender %></p>
-    <p>band type: <%= @band.band_type %></p>
+    <p>band type: <%= @band.bandtype %></p>
     <p>city: <a href=""><%= @band.city %></a></p>
     <p>language: <a href=""><%= @band.language %></a></p>
   </section>

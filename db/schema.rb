@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151208111334) do
   create_table "bands", force: :cascade do |t|
     t.string   "name"
     t.string   "gender"
-    t.string   "band_type"
+    t.string   "bandtype"
     t.string   "photo"
     t.string   "city"
     t.string   "language"
