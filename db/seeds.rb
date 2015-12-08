@@ -15,3 +15,8 @@ Band.create(name: "Topper Chopper",
             band_type: "versions", 
             city: "Madrid", 
             language: "english and spanishe")
+
+francis = Participant.find_by_id(1)
+topper_chopper = Band.find_by_id(1)
+
+topper_chopper.participants << francis
