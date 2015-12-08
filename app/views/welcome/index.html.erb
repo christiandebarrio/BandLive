@@ -1,0 +1,69 @@
+<section class="main-banner container-fluid div-with-shadow">
+  <div class="main-banner-image col-md-4">
+    <%= image_tag("main-banner.png", alt: "guitarrist") %>
+  </div>
+  <div class="col-md-8">
+    <div class="main-banner-title">
+      <h1>Plan a concert!</h1>
+    </div>
+    <div class="main-banner-content">
+      <h3>Do you want to play?  It’s so simple, just select a date and apply to play at the venue.</h3>
+    </div>
+    <div class="main-banner-form">
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:date, "Date", class: "input-label") %><br />
+        <%= date_field_tag(:date, Date.today, class: "input-white") %>
+        <%= text_field_tag(:location, nil, class: "input-white") %>
+        <%= submit_tag("Show me venues", class: "btn btn-green") %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="content container">
+  <section class="panels">
+    <div class="col-md-3 col-sm-6">
+      <article class="panel">
+        <div class="panel-image">
+          <%= image_tag "topper-chopper.jpg" %>
+        </div>
+        <footer>
+          <p><span class="panel-date">06 dec</span> at <a href="" class="vanue">place</a></p>
+        </footer>
+        <header>
+          <h1>Topper Chopper</h1>
+        </header>
+        <div class="panel-content">
+          <p>Gendre Rock-Original Music</p>
+          <p>Language - English</p>
+        </div>
+        <div class="social-share">
+          <%= link_to "share" , "#fakelink" ,class: "btn btn-green"%>
+        </div>
+      </article>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <article class="panel">
+        <div class="panel-image">
+          <%= image_tag "topper-chopper.jpg" %>
+        </div>
+        <footer>
+          <p><span class="panel-date">06 dec</span> at <a href="" class="vanue">place</a></p>
+        </footer>
+        <header>
+          <h1>Topper Chopper</h1>
+        </header>
+        <div class="panel-content">
+          <p>Gendre Rock-Original Music</p>
+          <p>Language - English</p>
+        </div>
+        <div class="social-share">
+          <%= link_to "share" , "#fakelink" ,class: "btn btn-green"%>
+        </div>
+      </article>
+    </div>
+
+   
+  </section>
+</div>

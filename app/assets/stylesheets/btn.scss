@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 20px;
+  margin: 7px 10px;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: transparent;
+  border: 1.5px solid #fff;    
+  text-transform: uppercase;
+  padding: 5px 60px;
+}
+
+.btn-default:hover {
+  color: #FE4D55;
+  background-color: #f4f8fb;
+  border-color: #fff;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #1ABC9C;
+  border: 0;
+  padding: 7px 30px;
+}
+
+.btn-green:hover {
+  color: #fff;
+  background-color: #FE4D55;
+}

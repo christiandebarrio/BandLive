@@ -19,7 +19,24 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:focus, a:hover {
+    color: #FE4D55;
+    text-decoration: underline;
+}
+
 .content {
   min-height: 531px;
 }
 
+.div-with-shadow {
+  box-shadow: 0 -10px 20px 5px black;
+}
+
+.text-with-shadow {
+  text-shadow: 1px 1px 4px #484A4A;
+}

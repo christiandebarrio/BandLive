@@ -1,0 +1,63 @@
+.panels {
+  margin-top: 30px;
+}
+
+.panel {
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 4px 4px 30px -9px #A6A8AB;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.panel-image {
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+
+.panel-image img {
+  width: 100%;
+}
+
+.panel footer {
+  margin-bottom: 0;
+}
+
+.panel footer p {
+  margin-bottom: 0;
+}
+
+.panel-date {
+  color: #FE4D55;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.panel.vanue a {
+  text-decoration: underline;
+}
+
+.panel header h1 {
+  margin-top: 12px;
+  margin-bottom: 13pt;
+  color: black;
+  font-size: 20pt;
+}
+
+.panel-content {
+  color: #BBBDBF;
+  font-size: 10pt;
+}
+
+.panel-content p {
+  margin-bottom: 3px;
+}
+
+.social-share {
+  position: relative;
+  margin: 12px auto 0;
+}
