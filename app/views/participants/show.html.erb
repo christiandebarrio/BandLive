@@ -4,6 +4,8 @@
     </h1>
     <p>email: <%= @participant.email %></p>
     <p>instrument: <%= @participant.instrument %></p>
-    <p>band: <a href=""><%= @band.name %></a></p>
+    <p>band: 
+      <%= link_to @band.name, band_path(@band.id) %>
+    </p>
   </section>
 </div>

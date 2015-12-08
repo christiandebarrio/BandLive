@@ -12,7 +12,7 @@
       <ul>
         <% @band.participants.each do |participant| %>
            <li>
-             <%= participant.name %>:
+             <%= link_to participant.name, band_participant_path(participant.band_id, participant.id) %>:
              <%= participant.instrument %>           
            </li>   
         <% end %>    
