@@ -4,13 +4,16 @@ Rails.application.routes.draw do
 
   resources :bands, only: [:show, :index] do
     resources :participants, only: [:show]
+    get "/profile" => "bands#profile"
   end
 
   resources :venues, only: [:index, :show]
 
   resources :concerts, only: [:index, :show]
 
+
   get "/login" => "login#show"
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

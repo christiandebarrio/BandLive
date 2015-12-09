@@ -11,4 +11,8 @@ class BandsController < ApplicationController
   def add_photo_url
     photo_url = generate_photo_url (name)
   end
+
+  def profile
+    @band = Band.find_by_id(params[:band_id])
+  end
 end
