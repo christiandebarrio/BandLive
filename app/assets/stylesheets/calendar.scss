@@ -1,0 +1,20 @@
+// Place all the styles related to the calendar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "_variables";
+
+
+
+#calendar .fc-bg .fc-past {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#calendar .fc-bg .concert {
+  background-color: $orange;
+}
+
+#calendar .fc-bg .concert.fc-past {
+  background-color: #AB4F54;
+}
+

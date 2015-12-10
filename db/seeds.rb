@@ -34,8 +34,15 @@ Band.create(name: "Cardigan",
             city: "Cuenca", 
             language: "english")
 
+Band.create(name: "Colors", 
+            gender: "jazz", 
+            bandtype: "versions", 
+            city: "Madrid", 
+            language: "english")
+
 topper_chopper = Band.find_by_id(1)
 cardigan = Band.find_by_id(2)
+colors = Band.find_by_id(3)
 
 Venue.create(name: "Moby Dick",
              email: "mobydick@email.com",
@@ -57,6 +64,16 @@ Concert.create(band_id: topper_chopper.id,
              date: "15/12/2015",
              time: "21:00")
 
+Concert.create(band_id: topper_chopper.id,
+             venue_id: honky_tonk.id,
+             date: "20/12/2015",
+             time: "20:00")
+
+Concert.create(band_id: topper_chopper.id,
+             venue_id: honky_tonk.id,
+             date: "6/12/2015",
+             time: "20:00")
+
 Concert.create(band_id: cardigan.id,
              venue_id: moby_dick.id,
              date: "16/12/2015",
@@ -67,7 +84,3 @@ Concert.create(band_id: cardigan.id,
              date: "21/12/2015",
              time: "23:00")
 
-Concert.create(band_id: topper_chopper.id,
-             venue_id: honky_tonk.id,
-             date: "20/12/2015",
-             time: "20:00")
