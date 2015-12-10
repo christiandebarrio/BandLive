@@ -52,8 +52,13 @@ Venue.create(name: "Honky Tonk",
              email: "honkytonk@email.com",
              address: "Calle Covarrubias, 24, 28010 Madrid")
 
+Venue.create(name: "El Chico Feo",
+             email: "elchicofeo@email.com",
+             address: "Calle Covarrubias, 21, 28010 Madrid")
+
 moby_dick = Venue.find_by_id(1)
 honky_tonk = Venue.find_by_id(2)
+elchicofeo = Venue.find_by_name("El Chico Feo")
 
 topper_chopper.participants << francis
 topper_chopper.participants << eric
@@ -63,6 +68,11 @@ Concert.create(band_id: topper_chopper.id,
              venue_id: moby_dick.id,
              date: "15/12/2015",
              time: "21:00")
+
+Concert.create(band_id: topper_chopper.id,
+             venue_id: honky_tonk.id,
+             date: "16/12/2015",
+             time: "20:00")
 
 Concert.create(band_id: topper_chopper.id,
              venue_id: honky_tonk.id,

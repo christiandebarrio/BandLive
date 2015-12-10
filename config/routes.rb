@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   get "/login" => "login#show"
 
-  get "/calendar/bands/:id/concerts/" => "calendar#concerts"
-
+  get "/calendar/bands/:id/concerts" => "calendar#band_concerts"
+  get "/calendar/venues-availables/:date" => "calendar#venues_availables"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

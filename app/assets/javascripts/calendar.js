@@ -21,50 +21,84 @@ $(document).ready(function() {
     function printConcerts (concerts) {
       concerts.forEach(function (concert) {
         console.log(concert.date);
-        // $('#calendar').fullCalendar({
-        //   dayRender: function(date, cell) {
-        //     var check = $.fullCalendar.moment(date,'yyyy-MM-dd');
-        //     if (check = concert.date) {
-        //       cell.addClass("color-concert");
-        //       var index = cell.index();
-        //       var header = $('#calendar thead.fc-head th').eq(index);
-        //       header.addClass('color-concert');
-        //     }
-        //   }
-        // });
 
         $("[data-date=" + concert.date + "]").addClass("concert");
       })
     }
   }
 
+  function putVenuesAvailables (date) {
+    console.log("Trying to get venues availables");
+    var request = $.get("/calendar/venues-availables/" + date)
+
+    function onRequestSuccess (response) {
+      checkVenuesAvailables(response);
+      console.log("Venues :", response);
+    }
+
+    function onRequestFailure (err) {
+      console.log(err.responseJSON);
+    }
+
+    request.done(onRequestSuccess);
+    request.fail(onRequestFailure);
+
+    function checkVenuesAvailables(venuesAvailables) {
+      var indexPanel = $(".calendar-venues-availables");
+      var htmlTitle = '<h1>Venues availables</h1>'
+                      
+      indexPanel.empty();
+      indexPanel.append(htmlTitle);
+
+      venuesAvailables.venues.forEach(function (venue) {
+        var htmlPanel =  '<div class="col-md-3 col-sm-6">\
+                            <a href="<%= venue_path(venue) %>" id="panel-link">\
+                            <article class="panel">\
+                              <div class="panel-image">\
+                                <%= image_tag venue.generate_photo_url(venue.name) %>\
+                              </div>\
+                              <header>\
+                                <h1><%= venue.name %></h1>\
+                              </header>\
+                              <div class="panel-content">\
+                                <p>email: <%= venue.email %></p>\
+                                <p>address: <%= venue.address %></p>\
+                              </div>\
+                            </article>\
+                            </a>\
+                          </div>'
+        indexPanel.append(htmlPanel);
+      })
+
+    }
+  }
+
+  // $(".calendar-venues-availables")
+
   $("#calendar").fullCalendar({
 
     dayClick: function() {
-      alert(this[0]);
+      var date = this.attr("data-date");
+      console.log("Date selected: " + date);
+      putVenuesAvailables(date);
+      $('html, body').animate({
+        scrollTop: $(".calendar-venues-availables").offset().top
+      }, 800);
     },
-
-    // dayRender: function (date, cell) {
-    //   var check = $.fullCalendar.moment(date,'yyyy-MM-dd');
-    //   var today = $.fullCalendar.moment(Date.today).startOf('day');
-    //   if (check < today) {
-    //     if (cell.hasClass('concert')) {
-    //         cell.addClass("past-days");
-    //     }
-    //   }
-    // },
 
     viewRender: function () {
         putConcertsInCalendar();
     },
 
-    events: [
-      {
-        title: 'All Day Event',
-        start: '2015-12-23'
-      }]
+ 
   });
 });
+
+// events: [
+//   {
+//     title: 'All Day Event',
+//     start: '2015-12-23'
+//   }]
 
 // $('#calendar').fullCalendar({
 //     defaultView: 'basicWeek',
@@ -78,6 +112,27 @@ $(document).ready(function() {
 //     }
 // });
 
+// dayRender: function (date, cell) {
+//   var check = $.fullCalendar.moment(date,'yyyy-MM-dd');
+//   var today = $.fullCalendar.moment(Date.today).startOf('day');
+//   if (check < today) {
+//     if (cell.hasClass('concert')) {
+//         cell.addClass("past-days");
+//     }
+//   }
+// },
+
+// $('#calendar').fullCalendar({
+//   dayRender: function(date, cell) {
+//     var check = $.fullCalendar.moment(date,'yyyy-MM-dd');
+//     if (check = concert.date) {
+//       cell.addClass("color-concert");
+//       var index = cell.index();
+//       var header = $('#calendar thead.fc-head th').eq(index);
+//       header.addClass('color-concert');
+//     }
+//   }
+// });
 
 // function requestArtistInfo (event) {
 //     event.preventDefault();
