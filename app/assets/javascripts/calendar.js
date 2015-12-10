@@ -45,30 +45,32 @@ $(document).ready(function() {
 
     function checkVenuesAvailables(venuesAvailables) {
       var indexPanel = $(".calendar-venues-availables");
-      var htmlTitle = '<h1>Venues availables</h1>'
                       
       indexPanel.empty();
-      indexPanel.append(htmlTitle);
-
-      venuesAvailables.venues.forEach(function (venue) {
-        var htmlPanel =  '<div class="col-md-3 col-sm-6">\
-                            <a href="<%= venue_path(venue) %>" id="panel-link">\
-                            <article class="panel">\
-                              <div class="panel-image">\
-                                <%= image_tag venue.generate_photo_url(venue.name) %>\
-                              </div>\
-                              <header>\
-                                <h1><%= venue.name %></h1>\
-                              </header>\
-                              <div class="panel-content">\
-                                <p>email: <%= venue.email %></p>\
-                                <p>address: <%= venue.address %></p>\
-                              </div>\
-                            </article>\
-                            </a>\
-                          </div>'
-        indexPanel.append(htmlPanel);
-      })
+      if(venuesAvailables.venues.length === 0) {
+        indexPanel.append('<h1>No venue available</h1>');
+      } else {
+        indexPanel.append('<h1>Venues availables</h1>');
+        venuesAvailables.venues.forEach(function (venue) {
+          var htmlPanel =  '<div class="col-md-3 col-sm-6">\
+                              <a href="<%= venue_path(venue) %>" id="panel-link">\
+                              <article class="panel">\
+                                <div class="panel-image">\
+                                  <%= image_tag venue.generate_photo_url(venue.name) %>\
+                                </div>\
+                                <header>\
+                                  <h1>' + venue.name + '</h1>\
+                                </header>\
+                                <div class="panel-content">\
+                                  <p>email: <%= venue.email %></p>\
+                                  <p>address: <%= venue.address %></p>\
+                                </div>\
+                              </article>\
+                              </a>\
+                            </div>';
+          indexPanel.append(htmlPanel);
+        });
+      };
 
     }
   }

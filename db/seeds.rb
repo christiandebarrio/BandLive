@@ -58,39 +58,44 @@ Venue.create(name: "El Chico Feo",
 
 moby_dick = Venue.find_by_id(1)
 honky_tonk = Venue.find_by_id(2)
-elchicofeo = Venue.find_by_name("El Chico Feo")
+el_chico_feo = Venue.find_by_name("El Chico Feo")
 
 topper_chopper.participants << francis
 topper_chopper.participants << eric
 cardigan.participants << julia
 
 Concert.create(band_id: topper_chopper.id,
-             venue_id: moby_dick.id,
-             date: "15/12/2015",
-             time: "21:00")
+               venue_id: honky_tonk.id,
+               date: "6/12/2015",
+               time: "20:00")
 
 Concert.create(band_id: topper_chopper.id,
-             venue_id: honky_tonk.id,
-             date: "16/12/2015",
-             time: "20:00")
+               venue_id: moby_dick.id,
+               date: "15/12/2015",
+               time: "21:00")
 
 Concert.create(band_id: topper_chopper.id,
-             venue_id: honky_tonk.id,
-             date: "20/12/2015",
-             time: "20:00")
-
-Concert.create(band_id: topper_chopper.id,
-             venue_id: honky_tonk.id,
-             date: "6/12/2015",
-             time: "20:00")
+               venue_id: honky_tonk.id,
+               date: "16/12/2015",
+               time: "20:00")
 
 Concert.create(band_id: cardigan.id,
-             venue_id: moby_dick.id,
-             date: "16/12/2015",
-             time: "22:00")
+               venue_id: moby_dick.id,
+               date: "16/12/2015",
+               time: "22:00")
+
+Concert.create(band_id: colors.id,
+               venue_id: el_chico_feo.id,
+               date: "16/12/2015",
+               time: "22:00")
+
+Concert.create(band_id: topper_chopper.id,
+               venue_id: honky_tonk.id,
+               date: "20/12/2015",
+               time: "20:00")
 
 Concert.create(band_id: cardigan.id,
-             venue_id: honky_tonk.id,
-             date: "21/12/2015",
-             time: "23:00")
+               venue_id: honky_tonk.id,
+               date: "21/12/2015",
+               time: "23:00")
 
