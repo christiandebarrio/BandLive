@@ -55,17 +55,17 @@ function putVenuesAvailables (date) {
       indexPanel.append('<h1>Venues availables</h1>');
       venuesAvailables.venues.forEach(function (venue) {
         var htmlPanel =  '<div class="col-md-3 col-sm-6">\
-                            <a href="<%= venue_path(venue) %>" id="panel-link">\
+                            <a href="/venue/' + venue.id + '" id="panel-link">\
                             <article class="panel">\
                               <div class="panel-image">\
-                                <%= image_tag venue.generate_photo_url(venue.name) %>\
+                                <img href="/assets/' + venue.photo +'" alt="' + venue.name + '">\
                               </div>\
                               <header>\
                                 <h1>' + venue.name + '</h1>\
                               </header>\
                               <div class="panel-content">\
-                                <p>email: <%= venue.email %></p>\
-                                <p>address: <%= venue.address %></p>\
+                                <p>email: ' + venue.email + '</p>\
+                                <p>address: ' + venue.address + '</p>\
                               </div>\
                             </article>\
                             </a>\

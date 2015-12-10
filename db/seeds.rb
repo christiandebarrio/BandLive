@@ -8,15 +8,18 @@
 
 Participant.create(name: "Francis", 
                    email: "francisvitro@gmail.com", 
-                   instrument: "drums")
+                   instrument: "drums",
+                   photo: "participants/francis.jpg")
 
 Participant.create(name: "Eric", 
                    email: "eric@email.com", 
-                   instrument: "guitar & vocals")
+                   instrument: "guitar & vocals",
+                   photo: "participants/eric.jpg")
 
 Participant.create(name: "julia", 
                    email: "julia@email.com", 
-                   instrument: "guitar & vocals")
+                   instrument: "guitar & vocals",
+                   photo: "participants/julia.jpg")
 
 francis = Participant.find_by_id(1)
 eric = Participant.find_by_id(2)
@@ -26,19 +29,22 @@ Band.create(name: "Topper Chopper",
             gender: "rock", 
             bandtype: "versions", 
             city: "Madrid", 
-            language: "english & spanish")
+            language: "english & spanish",
+            photo: "bands/topper-chopper.jpg")
 
 Band.create(name: "Cardigan", 
             gender: "pop", 
             bandtype: "original", 
             city: "Cuenca", 
-            language: "english")
+            language: "english",
+            photo: "bands/cardigan.jpg")
 
 Band.create(name: "Colors", 
             gender: "jazz", 
             bandtype: "versions", 
             city: "Madrid", 
-            language: "english")
+            language: "english",
+            photo: "bands/colors.jpg")
 
 topper_chopper = Band.find_by_id(1)
 cardigan = Band.find_by_id(2)
@@ -46,15 +52,18 @@ colors = Band.find_by_id(3)
 
 Venue.create(name: "Moby Dick",
              email: "mobydick@email.com",
-             address: "Av. de Brasil, 5, 28020 Madrid")
+             address: "Av. de Brasil, 5, 28020 Madrid",
+             photo: "venues/moby-dick.jpg")
 
 Venue.create(name: "Honky Tonk",
              email: "honkytonk@email.com",
-             address: "Calle Covarrubias, 24, 28010 Madrid")
+             address: "Calle Covarrubias, 24, 28010 Madrid",
+             photo: "venues/honky-tonk.jpg")
 
 Venue.create(name: "El Chico Feo",
              email: "elchicofeo@email.com",
-             address: "Calle Covarrubias, 21, 28010 Madrid")
+             address: "Calle Covarrubias, 21, 28010 Madrid",
+             photo: "venues/el-chico-feo.jpg")
 
 moby_dick = Venue.find_by_id(1)
 honky_tonk = Venue.find_by_id(2)

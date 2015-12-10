@@ -3,6 +3,7 @@ json.venues @venues_availables do |venue|
   json.id venue.id
   json.email venue.email
   json.address venue.address
+  json.photo venue.photo
 
   json.concerts venue.concerts do |concert|
     json.venue_id concert.venue_id
