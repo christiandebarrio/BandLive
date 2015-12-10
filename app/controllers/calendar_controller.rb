@@ -2,9 +2,10 @@ class CalendarController < ApplicationController
 
   def band_concerts
     band = Band.find_by_id(params[:id])
-    concerts = band.concerts
-    if concerts
-      render json: concerts
+    @band_concerts = band.concerts
+
+    if @band_concerts
+      render :band_concerts
     else
       render status: 404, json: {error: "Concerts not found"}
     end
@@ -22,12 +23,7 @@ class CalendarController < ApplicationController
     end
 
     if @venues_availables
-      respond_to do |format|
-        # format.html { render partial: "partials/panels/panel_venue.html.erb" }
-        format.json { render :venues_with_concerts }
-
-        
-      end
+      render :venues_with_concerts
     else
       render status: 404, json: {error: "No venues"}
     end
