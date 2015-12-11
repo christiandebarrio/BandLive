@@ -5,4 +5,9 @@ class Venue < ActiveRecord::Base
     photo_file = name.downcase.strip.gsub(" ","-")
     photo_url = "venues/" + photo_file + ".jpg"
   end
+
+  def self.availables date_to_check
+    Venue.where("id NOT IN (SELECT DISTINCT(venue_id) FROM concerts WHERE date = ?)",date_to_check)
+
+  end
 end

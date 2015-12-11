@@ -12,18 +12,12 @@ class CalendarController < ApplicationController
   end
 
   def venues_availables
-    venues = Venue.all
     date = params[:date]
-    @venues_availables = []
-
-    venues.each do |venue|
-      if venue.concerts.find { |concert| concert[:date].strftime("%F") == date } == nil
-        @venues_availables << venue
-      end
-    end
+    @venues_availables = Venue.availables(date)
+    
 
     if @venues_availables
-      render :venues_with_concerts
+      render :venues_availables
     else
       render status: 404, json: {error: "No venues"}
     end
