@@ -8,6 +8,5 @@ class Venue < ActiveRecord::Base
 
   def self.availables date_to_check
     Venue.where("id NOT IN (SELECT DISTINCT(venue_id) FROM concerts WHERE date = ?)",date_to_check)
-
   end
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :venues, only: [:index, :show]
 
-  resources :concerts, only: [:index, :show]
+  resources :concerts, only: [:index, :show, :create]
 
 
   get "/login" => "login#show"

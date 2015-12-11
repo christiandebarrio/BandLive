@@ -9,4 +9,15 @@ class ConcertsController < ApplicationController
   def index
     @concerts = Concert.all
   end
+
+  def create
+    Concert.create concert_params
+  end
+
+  private
+
+  def concert_params
+    params.require(:concert).permit(:band_id, :venue_id, :date, :time)
+  end
+
 end
