@@ -58,7 +58,7 @@ function putVenuesAvailables (date) {
                             <a href="/venue/' + venue.id + '" id="panel-link">\
                             <article class="panel">\
                               <div class="panel-image">\
-                                <img href="/assets/' + venue.photo +'" alt="' + venue.name + '">\
+                                <img src="/assets/' + venue.photo +'" alt="' + venue.name + '">\
                               </div>\
                               <header>\
                                 <h1>' + venue.name + '</h1>\
@@ -66,6 +66,9 @@ function putVenuesAvailables (date) {
                               <div class="panel-content">\
                                 <p>email: ' + venue.email + '</p>\
                                 <p>address: ' + venue.address + '</p>\
+                              </div>\
+                              <div class="play-here">\
+                                <a href="" class="btn btn-green">Play here</a>\
                               </div>\
                             </article>\
                             </a>\
