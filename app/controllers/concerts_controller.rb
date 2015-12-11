@@ -11,7 +11,10 @@ class ConcertsController < ApplicationController
   end
 
   def create
-    Concert.create concert_params
+    new_concert = Concert.create concert_params
+    if new_concert
+      render json: new_concert
+    end
   end
 
   private

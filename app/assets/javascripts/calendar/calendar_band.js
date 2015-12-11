@@ -64,7 +64,7 @@ function putVenuesAvailables (date) {
                   <img src="/assets/' + venue.photo +'" alt="' + venue.name + '">\
                 </div>\
                 <header>\
-                  <h1 id="venue-name">' + venue.name + '</h1>\
+                  <h1 id="venue-name" data-id="' + venue.id + '">' + venue.name + '</h1>\
                 </header>\
                 <div class="panel-content">\
                   <p>email: ' + venue.email + '</p>\
@@ -89,29 +89,24 @@ $(document).ready(function() {
 
   function createConcert (event) {
     event.preventDefault();
-    var concert = {
-      venue_id: event.currentTarget.parentElement.parentElement.querySelector("#venue-name").innerHTML,
+    var new_concert = { concert: {
+      venue_id: event.currentTarget.parentElement.parentElement.querySelector("#venue-name").getAttribute('data-id'),
       band_id: $(".profile-band-name").attr('data-id'),
       date: $(".date-selected").text(),
-      time: "23:00"
+      time: "23:00"}
     }
-    console.log('Concert data to save: ' + concert);
-    debugger
-    // var venue_id = event.currentTarget
+    var request = $.post('/concerts', new_concert)
 
-    // var request = $.post('/concerts', concert)
+    function onRequestSuccess (response) {     
+      console.log('Request sended to create concert :', response);
+    }
 
-    // function onRequestSuccess (response) {
-    //   checkVenuesAvailables(response);
-    //   console.log('Request sended to create concert :', response);
-    // }
+    function onRequestFailure (err) {
+      console.log(err.responseJSON);
+    }
 
-    // function onRequestFailure (err) {
-    //   console.log(err.responseJSON);
-    // }
-
-    // request.done(onRequestSuccess);
-    // request.fail(onRequestFailure);
+    request.done(onRequestSuccess);
+    request.fail(onRequestFailure);
   }
 
   $(".calendar-venues-availables").on('click', '.btn-play-here', createConcert);
