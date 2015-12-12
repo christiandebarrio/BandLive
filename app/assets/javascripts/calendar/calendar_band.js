@@ -35,7 +35,7 @@ function putConcerts () {
       outstandingConcerts.forEach(function (concert) {
         var html =  '\
           <li>\
-            <span class="date">' + concert.date + '</span> - \
+            <span class="date">' + dateFormat(concert.date) + '</span> - \
             <span class="time">' + concert.time + '</span> - \
             <span class="venue-name">' + concert.venue_name + '</span>\
           </li>';
