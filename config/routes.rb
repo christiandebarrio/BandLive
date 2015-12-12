@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get "/calendar/bands/:id/concerts" => "calendar#band_concerts"
   get "/calendar/venues-availables/:date" => "calendar#venues_availables"
+  # get "/calendar/band/:id/outstanding_concerts" => "calendar#outstanding_concerts"
+  
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

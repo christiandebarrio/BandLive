@@ -5,6 +5,8 @@ $(document).ready(function() {
 
   $("#calendar").fullCalendar({
 
+    height: 700,
+
     dayClick: function() {
       var date = this.attr("data-date");
       console.log("Date selected: " + date);
@@ -15,7 +17,7 @@ $(document).ready(function() {
     },
 
     viewRender: function () {
-        putConcertsInCalendar();
+        putConcerts();
     },
 
  

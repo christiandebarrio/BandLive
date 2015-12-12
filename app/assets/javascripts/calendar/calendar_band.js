@@ -1,11 +1,13 @@
-function putConcertsInCalendar () {
+function putConcerts () {
+  var bandId = $('.profile-band-name').attr('data-id');
   console.log('trying to get concerts');
-  var band = $('.profile-band-name').attr('data-id');
-  var request = $.get('/calendar/bands/' + band + '/concerts');
+
+  var request = $.get('/calendar/bands/' + bandId + '/concerts');
   
   function onRequestSuccess (response) {
     printConcerts(response);
-    console.log('Concerts of band_id', band,': ', response);
+    putOutstandingConcerts(response);
+    console.log('Concerts of band_id: ', bandId,': ', response);
   }
 
   function onRequestFailure (err) {
@@ -15,7 +17,40 @@ function putConcertsInCalendar () {
   request.done(onRequestSuccess);
   request.fail(onRequestFailure);
 
+  function putOutstandingConcerts (concerts) {
+    var divOustandingConcerts = $('.calendar-outstanding-concerts');
+    var today = $(".fc-today").attr('data-date');
+    var outstandingConcerts = concerts.band_concerts.filter(function (concert) {
+      if(concert.date >= today) {
+        return concert;
+      };
+    });
+
+    divOustandingConcerts.empty();
+
+    if(outstandingConcerts.length > 0) {
+      divOustandingConcerts.append('<h1>Outstanding concerts</h1>');
+      divOustandingConcerts.append('<ul id="list-outstanding-concerts">');
+
+      outstandingConcerts.forEach(function (concert) {
+        var html =  '\
+          <li>\
+            <span class="date">' + concert.date + '</span> - \
+            <span class="time">' + concert.time + '</span> - \
+            <span class="venue-name">' + concert.venue_name + '</span>\
+          </li>';
+
+        divOustandingConcerts.append(html);
+
+      });
+
+      divOustandingConcerts.append('</ul>');
+
+    };
+  }
+
   function printConcerts (concerts) {
+    $('.fc-content-skeleton .event').empty();
     concerts.band_concerts.forEach(function (concert) {
       console.log(concert.date);
 
@@ -31,10 +66,11 @@ function putConcertsInCalendar () {
 
 function putVenuesAvailables (date) {
   console.log('Trying to get venues availables');
+
   var request = $.get('/calendar/venues-availables/' + date)
 
   function onRequestSuccess (response) {
-    checkVenuesAvailables(response);
+    printVenuesAvailables(response);
     console.log('Venues :', response);
   }
 
@@ -45,16 +81,16 @@ function putVenuesAvailables (date) {
   request.done(onRequestSuccess);
   request.fail(onRequestFailure);
 
-  function checkVenuesAvailables(venuesAvailables) {
-    var indexPanel = $('.calendar-venues-availables');
+  function printVenuesAvailables (venuesAvailables) {
+    var divVenuesAvailables = $('.calendar-venues-availables');
     var htmldate = '<span class="date-selected">' + date + '</span>'
 
 
-    indexPanel.empty();
+    divVenuesAvailables.empty();
     if(venuesAvailables.venues.length === 0) {
-      indexPanel.append('<h1>No venues availables in ' + htmldate + '</h1>');
+      divVenuesAvailables.append('<h1>No venues availables in ' + htmldate + '</h1>');
     } else {
-      indexPanel.append('<h1>Venues availables in ' + htmldate + '</h1>');
+      divVenuesAvailables.append('<h1>Venues availables in ' + htmldate + '</h1>');
       venuesAvailables.venues.forEach(function (venue) {
         var htmlPanel =  '\
           <div class="col-md-3 col-sm-6">\
@@ -77,10 +113,9 @@ function putVenuesAvailables (date) {
             </a>\
           </div>';
 
-        indexPanel.append(htmlPanel);
+        divVenuesAvailables.append(htmlPanel);
       });
     };
-
   };
 }
 
@@ -95,10 +130,13 @@ $(document).ready(function() {
       date: $(".date-selected").text(),
       time: "23:00"}
     }
+
     var request = $.post('/concerts', new_concert)
 
     function onRequestSuccess (response) {     
       console.log('Request sended to create concert :', response);
+      putConcerts();
+      $('html, body').animate({scrollTop: 0}, 800);
     }
 
     function onRequestFailure (err) {

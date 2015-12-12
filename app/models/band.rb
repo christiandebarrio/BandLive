@@ -6,4 +6,8 @@ class Band < ActiveRecord::Base
     photo_file = name.downcase.strip.gsub(" ","-")
     photo_url = "bands/" + photo_file + ".jpg"
   end
+
+  def list_outstanding_concerts
+    concerts.where('date >= ?', Date.today).length
+  end
 end
