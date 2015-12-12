@@ -2,7 +2,7 @@ class CalendarController < ApplicationController
 
   def band_concerts
     band = Band.find_by_id(params[:id])
-    @band_concerts = band.concerts
+    @band_concerts = band.concerts.sort_by &:date
 
     if @band_concerts
       render :band_concerts
