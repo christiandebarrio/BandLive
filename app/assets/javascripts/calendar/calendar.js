@@ -10,10 +10,7 @@ $(document).ready(function() {
     dayClick: function() {
       var date = this.attr("data-date");
       console.log("Date selected: " + date);
-      putVenuesAvailables(date);
-      $('html, body').animate({
-        scrollTop: $(".calendar-venues-availables").offset().top
-      }, 800);
+      putVenuesAvailables(date);  
     },
 
     viewRender: function () {

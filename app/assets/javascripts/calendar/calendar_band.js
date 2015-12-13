@@ -1,5 +1,6 @@
 function putConcerts () {
   var bandId = $('.profile-band-name').attr('data-id');
+  $('.calendar-venues-availables').empty();
   console.log('trying to get concerts');
 
   var request = $.get('/calendar/bands/' + bandId + '/concerts');
@@ -87,6 +88,7 @@ function putVenuesAvailables (date) {
 
 
     divVenuesAvailables.empty();
+
     if(venuesAvailables.venues.length === 0) {
       divVenuesAvailables.append('<h1>No venues availables in ' + htmldate + '</h1>');
     } else {
@@ -114,6 +116,10 @@ function putVenuesAvailables (date) {
           </div>';
 
         divVenuesAvailables.append(htmlPanel);
+
+        $('html, body').animate({
+          scrollTop: $(".calendar-venues-availables").offset().top
+        }, 800);
       });
     };
   };
