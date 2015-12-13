@@ -27,7 +27,7 @@ julia = Participant.find_by_id(3)
 
 Band.create(name: "Topper Chopper", 
             gender: "rock", 
-            bandtype: "versions", 
+            bandtype: "covers", 
             city: "Madrid", 
             language: "english & spanish",
             photo: "bands/topper-chopper.jpg")
@@ -41,7 +41,7 @@ Band.create(name: "Cardigan",
 
 Band.create(name: "Colors", 
             gender: "jazz", 
-            bandtype: "versions", 
+            bandtype: "covers", 
             city: "Madrid", 
             language: "english",
             photo: "bands/colors.jpg")
