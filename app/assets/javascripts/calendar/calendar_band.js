@@ -51,6 +51,7 @@ function putConcerts () {
   }
 
   function printConcerts (concerts) {
+    $('.fc-day-number').removeClass('selected')
     $('.fc-content-skeleton .event').empty();
     concerts.band_concerts.forEach(function (concert) {
       console.log(concert.date);
@@ -58,8 +59,8 @@ function putConcerts () {
       $('[data-date=' + concert.date + ']').addClass('concert');
       $('.fc-content-skeleton [data-date=' + concert.date + ']').append(
         '<div class="event">\
-          <p class="venue-name">' + concert.venue_name + '</p>\
-          <p class="concert-time">' + concert.time + '</p>\
+          <p class="event venue-name">' + concert.venue_name + '</p>\
+          <p class="event concert-time">' + concert.time + '</p>\
         </div>')
     })
   }
@@ -92,7 +93,7 @@ function putVenuesAvailables (date) {
     if(venuesAvailables.venues.length === 0) {
       divVenuesAvailables.append('<h1>No venues availables in ' + htmldate + '</h1>');
     } else {
-      divVenuesAvailables.append('<h1>Venues availables in ' + htmldate + '</h1>');
+      divVenuesAvailables.append('<h1>- Select a venue for ' + htmldate + '</h1>');
       venuesAvailables.venues.forEach(function (venue) {
         var htmlPanel =  '\
           <div class="col-md-3 col-sm-6">\
@@ -116,10 +117,6 @@ function putVenuesAvailables (date) {
           </div>';
 
         divVenuesAvailables.append(htmlPanel);
-
-        $('html, body').animate({
-          scrollTop: $(".calendar-venues-availables").offset().top
-        }, 800);
       });
     };
   };
