@@ -14,6 +14,11 @@
   padding: 0;
 }
 
+.fc td { // cells calendar border
+  border: 1px solid $grey_light;
+  cursor: pointer;
+}
+
 #calendar .fc-toolbar { // toolbar
   color: $white;
   margin-bottom: 40px;
@@ -22,11 +27,6 @@
 #calendar .fc-toolbar h2 { // month text
   text-transform: uppercase;
   font-size: 40pt;
-}
-
-.fc td { // cells calendar border
-  border: 1px solid $grey_light;
-  cursor: pointer;
 }
 
 #calendar .fc-day-header,
@@ -97,9 +97,21 @@
   background: linear-gradient(to right, #1ABC9C , #1B75BB); /* Standard syntax */
 }
 
+#calendar .fc-day-number.concert.fc-past { // concert past day content
+  color: #929496;
+}
+
+#calendar .fc-bg .concert.fc-past { // concert past day bkg
+  background: #0D6352; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #0D6352 , #10446D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #0D6352, #10446D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #0D6352, #10446D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #0D6352, #10446D); /* Standard syntax */
+}
+
 #calendar .fc-day-number.fc-past { // past days bkg
-  color: $grey_light;
-  background-color: rgba(0, 0, 0, 0.35);
+  color: #3E3F46;
+  // background-color: rgba(0, 0, 0, 0.35);
   cursor: default;
 }
 
