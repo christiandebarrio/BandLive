@@ -139,7 +139,9 @@ $(document).ready(function() {
     function onRequestSuccess (response) {     
       console.log('Request sended to create concert :', response);
       putConcerts();
-      $('html, body').animate({scrollTop: 0}, 800);
+      $('html, body').animate({
+        scrollTop: $("#calendar").offset().top - 50
+      }, 800);
     }
 
     function onRequestFailure (err) {
