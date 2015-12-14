@@ -71,8 +71,9 @@ function putConcerts () {
       console.log(concert.date);
 
       $('[data-date=' + concert.date + ']').addClass('concert');
-      $('.fc-content-skeleton [data-date=' + concert.date + ']').append(
-        '<div class="event">\
+      $('.fc-content-skeleton [data-date=' + concert.date + ']').append('\
+        <img src="/assets/quaver-calendar.png" alt="quaver" class="event"/>\
+        <div class="event">\
           <p class="event concert-time">' + concert.time + 'h</p>\
           <p class="event venue-name">' + concert.venue_name + '</p>\
         </div>')

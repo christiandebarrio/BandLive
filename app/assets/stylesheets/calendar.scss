@@ -88,6 +88,11 @@
   margin: 0;
 }
 
+#calendar .fc-day-number img.event { // quaver image
+  float: left;
+  margin-top: 11px;
+}
+
 #calendar .fc-bg .concert { // concert day bkg
   background: #1ABC9C; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #1ABC9C , #1B75BB); /* For Safari 5.1 to 6.0 */
