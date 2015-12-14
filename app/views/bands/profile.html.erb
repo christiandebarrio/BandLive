@@ -1,10 +1,12 @@
-<div class="content container">
+<div class="container">
   <h1 class="profile-band-name" data-id="<%= @band.id %>">
     <%= @band.name %>
   </h1>
-  <section class="calendar band-calendar">
-    <div id='calendar'></div>
-  </section>
-  <section class="calendar-venues-availables container"></section>
-  <section class="calendar-outstanding-concerts container"></section>
 </div>
+<section class="calendar band-calendar container-fluid">
+    <div id='calendar' class="container"></div>
+    <div class="calendar-venues-availables container"></div>  
+</section>
+
+  
+<section class="calendar-outstanding-concerts container"></section>
