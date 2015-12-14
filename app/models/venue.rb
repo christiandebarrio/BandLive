@@ -1,6 +1,8 @@
 class Venue < ActiveRecord::Base
   has_many :concerts
 
+  validates :name, :email, :address, presence: true
+
   def generate_photo_url name
     photo_file = name.downcase.strip.gsub(" ","-")
     photo_url = "venues/" + photo_file + ".jpg"
