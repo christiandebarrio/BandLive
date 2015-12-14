@@ -1,3 +1,13 @@
+function fill_empty_days () {
+  $('.fc-day-number').each(function (item, day_cell) {
+    if(!$(day_cell).hasClass('concert') &&
+       !$(day_cell).hasClass('fc-past')) {
+          // $(day_cell).append('<div class="plus-icon">+</div>')
+          $(day_cell).append('<div class="add-event">add a concert</div>')
+    };
+  });
+}
+
 function putConcerts () {
   var bandId = $('.profile-band-name').attr('data-id');
   $('.calendar-venues-availables').empty();
@@ -8,6 +18,7 @@ function putConcerts () {
   function onRequestSuccess (response) {
     printConcerts(response);
     putOutstandingConcerts(response);
+    fill_empty_days();
     console.log('Concerts of band_id: ', bandId,': ', response);
   }
 
@@ -62,6 +73,7 @@ function putConcerts () {
           <p class="event concert-time">' + concert.time + 'h</p>\
           <p class="event venue-name">' + concert.venue_name + '</p>\
         </div>')
+      // fill_empty_days();
     })
   }
 }

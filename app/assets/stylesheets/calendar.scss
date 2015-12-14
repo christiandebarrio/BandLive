@@ -39,13 +39,6 @@
   padding-left: 10px;
 }
 
-#calendar .fc-bg .fc-past { // past days bkg
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
-
-
-
 #calendar .fc-content-skeleton .event {
 }
 
@@ -115,15 +108,37 @@
   background: linear-gradient(to right, #0D6352, #10446D); /* Standard syntax */
 }
 
-#calendar .fc-day-number.fc-past { // past days bkg
+#calendar .fc-day-number.fc-past { // past days content
   color: #3E3F46;
   // background-color: rgba(0, 0, 0, 0.35);
   cursor: default;
 }
 
+#calendar .fc-bg .fc-past, { // past days bkg
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
 #calendar .fc-day.fc-past { // past days bkg
   // background-color: rgba(0, 0, 0, 0.35);
   cursor: default;
+}
+
+td.fc-past { // past cells calendar border
+  border: 1px solid $grey_dark;
+}
+
+.plus-icon { // icon + 
+  position: relative;
+  top: -68px;
+  left: -99px;
+  font-size: 42pt;
+}
+
+.add-event { // txt add event
+  font-size: 10pt;
+  text-align: left;
+  padding: 0;
+  margin: 6% 0 0 0;
 }
 
 .calendar-venues-availables {
