@@ -14,9 +14,14 @@
   padding: 0;
 }
 
-#calendar .fc-toolbar { // month
+#calendar .fc-toolbar { // toolbar
   color: $white;
   margin-bottom: 40px;
+}
+
+#calendar .fc-toolbar h2 { // month text
+  text-transform: uppercase;
+  font-size: 40pt;
 }
 
 .fc td { // cells calendar border
