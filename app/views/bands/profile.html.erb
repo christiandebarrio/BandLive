@@ -1,8 +1,15 @@
-<div class="container">
-  <h1 class="profile-band-name" data-id="<%= @band.id %>">
-    <%= @band.name %>
-  </h1>
-</div>
+<section id="band-info" class="container">
+  <div class="col-md-3">
+    <div id="profile-image">
+      <%= image_tag @band.generate_photo_url(@band.name) %>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h1 class="profile-band-name" data-id="<%= @band.id %>">
+      <%= @band.name %>
+    </h1>
+  </div>
+</section id="band-info">
 <section class="calendar band-calendar container-fluid">
     <div id='calendar' class="container"></div>
     <div class="calendar-venues-availables container"></div>  

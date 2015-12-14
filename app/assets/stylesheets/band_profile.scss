@@ -1,0 +1,22 @@
+@import "_variables";
+
+#band-info { 
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#band-info h1 {
+  font-weight: bold;
+  font-size: 30pt;
+  color: $grey_dark;
+}
+
+#band-info #profile-image {
+  overflow: hidden;
+  width: 75%;
+  margin: auto;
+}
+
+#band-info #profile-image img{
+  width: 100%;
+}
