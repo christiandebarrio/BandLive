@@ -30,7 +30,7 @@ function putConcerts () {
     divOustandingConcerts.empty();
 
     if(outstandingConcerts.length > 0) {
-      divOustandingConcerts.append('<h1>Outstanding concerts</h1>');
+      divOustandingConcerts.append('<h1>Next concerts</h1>');
       divOustandingConcerts.append('<ul id="list-outstanding-concerts">');
 
       outstandingConcerts.forEach(function (concert) {
@@ -59,8 +59,8 @@ function putConcerts () {
       $('[data-date=' + concert.date + ']').addClass('concert');
       $('.fc-content-skeleton [data-date=' + concert.date + ']').append(
         '<div class="event">\
+          <p class="event concert-time">' + concert.time + 'h</p>\
           <p class="event venue-name">' + concert.venue_name + '</p>\
-          <p class="event concert-time">' + concert.time + '</p>\
         </div>')
     })
   }
