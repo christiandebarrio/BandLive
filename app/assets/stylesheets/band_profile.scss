@@ -9,6 +9,7 @@
 #band-info h1 {
   font-weight: bold;
   font-size: 30pt;
+  margin-top: 16px;
 }
 
 #band-info #profile-image {
@@ -19,4 +20,15 @@
 
 #band-info #profile-image img{
   width: 100%;
+}
+
+#band-info h2 { // quaver text section
+  margin: 0;
+  font-size: 14pt;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+#band-info img { // quaver img
+    display: inline-block;
 }
