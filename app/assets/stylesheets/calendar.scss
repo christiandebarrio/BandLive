@@ -50,13 +50,19 @@
 }
 
 #calendar .fc-day-number.fc-today { // today content
-  color: $white;
-  border-top: 4px solid $white;
-  border-left: 4px solid $white;  
+  // color: $white;
+  // border-top: 4px solid $white;
+  // border-left: 4px solid $white;  
+}
+
+#calendar .fc-day-number.fc-today:hover { // today content hover
+  color: $grey_dark;
+  // border-top: 4px solid $white;
+  // border-left: 4px solid $white;  
 }
 
 #calendar .fc-bg .fc-today { // today bkg
-  background-color: $green;
+  background-color: $white;
 }
 
 #calendar .fc-day-number { // default day content
@@ -83,7 +89,7 @@
 }
 
 #calendar .fc-day-number .event{ // concert day txt inside
-  font-size: 12pt;
+  font-size: 10pt;
   text-align: left;
   padding: 0;
   margin: 0;
