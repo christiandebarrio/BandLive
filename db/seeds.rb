@@ -25,26 +25,31 @@ francis = Participant.find_by_id(1)
 eric = Participant.find_by_id(2)
 julia = Participant.find_by_id(3)
 
+description_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt dolor in velit molestie, at finibus risus fermentum. Quisque ultrices semper purus imperdiet viverra. In at est libero. Maecenas nisi justo, iaculis a convallis non, varius vitae enim. Vestibulum vitae leo sit amet metus sagittis gravida. Morbi nunc lacus, ornare vel metus in, lacinia mattis turpis. Praesent non tempor nisl, sed dignissim nunc."
+
 Band.create(name: "Topper Chopper", 
             gender: "rock", 
             bandtype: "covers", 
             city: "Madrid", 
             language: "english & spanish",
-            photo: "bands/topper-chopper.jpg")
+            photo: "bands/topper-chopper.jpg",
+            description: description_text))
 
 Band.create(name: "Cardigan", 
             gender: "pop", 
             bandtype: "original", 
             city: "Cuenca", 
             language: "english",
-            photo: "bands/cardigan.jpg")
+            photo: "bands/cardigan.jpg",
+            description: description_text))
 
 Band.create(name: "Colors", 
             gender: "jazz", 
             bandtype: "covers", 
             city: "Madrid", 
             language: "english",
-            photo: "bands/colors.jpg")
+            photo: "bands/colors.jpg",
+            description: description_text)
 
 topper_chopper = Band.find_by_id(1)
 cardigan = Band.find_by_id(2)
