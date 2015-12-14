@@ -33,7 +33,7 @@ Band.create(name: "Topper Chopper",
             city: "Madrid", 
             language: "english & spanish",
             photo: "bands/topper-chopper.jpg",
-            description: description_text))
+            description: description_text)
 
 Band.create(name: "Cardigan", 
             gender: "pop", 
@@ -41,7 +41,7 @@ Band.create(name: "Cardigan",
             city: "Cuenca", 
             language: "english",
             photo: "bands/cardigan.jpg",
-            description: description_text))
+            description: description_text)
 
 Band.create(name: "Colors", 
             gender: "jazz", 
