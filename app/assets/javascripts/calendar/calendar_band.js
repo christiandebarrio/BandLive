@@ -1,9 +1,12 @@
 function fill_empty_days () {
+  $('.add-event').remove();
+
   $('.fc-day-number').each(function (item, day_cell) {
+
     if(!$(day_cell).hasClass('concert') &&
-       !$(day_cell).hasClass('fc-past')) {
-          // $(day_cell).append('<div class="plus-icon">+</div>')
-          $(day_cell).append('<div class="add-event">add a concert</div>')
+       !$(day_cell).hasClass('fc-past')){
+          // $(day_cell).append('<div class="plus-icon">+</div>');
+          $(day_cell).append('<div class="add-event">add a concert</div>');
     };
   });
 }
@@ -63,7 +66,7 @@ function putConcerts () {
 
   function printConcerts (concerts) {
     $('.fc-day-number').removeClass('selected')
-    $('.fc-content-skeleton .event').empty();
+    $('.fc-content-skeleton .event').remove();
     concerts.band_concerts.forEach(function (concert) {
       console.log(concert.date);
 
@@ -73,7 +76,6 @@ function putConcerts () {
           <p class="event concert-time">' + concert.time + 'h</p>\
           <p class="event venue-name">' + concert.venue_name + '</p>\
         </div>')
-      // fill_empty_days();
     })
   }
 }

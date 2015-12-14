@@ -1,10 +1,3 @@
-// function fill_empty_days () {
-//   var day = $('.fc-day-number')
-
-//   if(!$('.fc-day-number').hasClass('concert'))
-//   $('.fc-day-number').append('<div class="plus-icon">+</div>')
-// }
-
 $(document).ready(function() {
   'use strict';
     // page is now ready, initialize the calendar...
@@ -25,7 +18,7 @@ $(document).ready(function() {
 
       } else if(!$('[data-date=' + date + ']').hasClass('fc-past') &&
         !$('[data-date=' + date + ']').hasClass('concert')) {
-        
+
         $('[class*="fc-day"]').removeClass('selected');
         $('[class*="fc-day"][data-date=' + date + ']').addClass('selected');
         console.log('Date selected: ' + date);
@@ -39,7 +32,6 @@ $(document).ready(function() {
 
     viewRender: function () {
         putConcerts();
-        // fill_empty_days();
     },
 
  
