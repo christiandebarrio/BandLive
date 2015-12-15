@@ -33,7 +33,7 @@ function putConcerts () {
   request.fail(onRequestFailure);
 
   function putOutstandingConcerts (concerts) {
-    var divOustandingConcerts = $('.calendar-outstanding-concerts');
+    var divOustandingConcerts = $('#next-concerts');
     var today = $(".fc-today").attr('data-date');
     var outstandingConcerts = concerts.band_concerts.filter(function (concert) {
       if(concert.date >= today) {
@@ -45,16 +45,42 @@ function putConcerts () {
 
     if(outstandingConcerts.length > 0) {
       divOustandingConcerts.append('<h1>Next concerts</h1>');
-      divOustandingConcerts.append('<ul id="list-outstanding-concerts">');
+      
+      var html_message = '\
+            <div class="message-thunder">\
+              <img src="/assets/thunder-dark.png" alt="thunder"/>\
+            </div>\
+            <div class="message">\
+              <h2>WELL DONE! You have a few concerts coming.</h2>\
+              <h3>Share with friends in your social networks to get \
+              the best night live.</h3>\
+            </div>';     
+      divOustandingConcerts.append(html_message);
 
-      outstandingConcerts.forEach(function (concert) {
+      divOustandingConcerts.append('<ul id="list-next-concerts container>');
+
+      outstandingConcerts.forEach(function (concert) { 
         var html =  '\
-          <li>\
-            <span class="date">' + dateFormat(concert.date) + '</span> - \
-            <span class="time">' + concert.time + '</span> - \
-            <span class="venue-name">' + concert.venue_name + '</span>\
+          <li class="item-next-concerts container">\
+            <div class="next-concert-quaver">\
+              <img src="/assets/quaver-little.png" alt="quaver"/>\
+            </div>\
+            <div class="next-concert-data fix-data-date">\
+              <span class="title">Date</span>\
+              <p class="data">' + dateMonthDay(concert.date) + '</p>\
+            </div>\
+            <div class="next-concert-data fix-data-time">\
+              <span class="title hour">Time</span>\
+              <p class="data hour">' + concert.time + '</p>\
+            </div>\
+            <div class="next-concert-data">\
+              <span class="title">Venue</span>\
+              <p class="data">' + concert.venue_name + '</p>\
+            </div>\
+            <div class="share-social">\
+              <a href="" class="btn btn-green btn-share">Share</a>\
+            </div>\
           </li>';
-
         divOustandingConcerts.append(html);
 
       });

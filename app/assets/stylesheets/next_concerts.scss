@@ -1,0 +1,88 @@
+@import "_variables";
+
+#next-concerts { //container
+  margin-top: 30px;
+}
+
+#next-concerts h1 { //title
+  font-size: 34pt;
+  font-weight: bold;
+}
+
+#next-concerts .message-thunder { //container thunder
+  width: 23px;
+  display: inline-flex;
+}
+
+#next-concerts .message-thunder img { //img thunder
+  width: 100%;
+}
+
+#next-concerts .message { //container message
+  color: $grey_light;
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+#next-concerts .message h2 { //message
+  font-size: 16pt;
+  margin-top: 21px;
+  margin-bottom: 5px;
+}
+
+#next-concerts .message h3 { //social message
+  font-size: 12pt;
+  margin-top: 0;
+}
+
+li.item-next-concerts { // container items li
+  list-style-type: none;
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: 1px solid $grey_light;
+}
+
+.item-next-concerts .next-concert-quaver { //container quaver
+  width: 29px;
+  float: left;
+}
+
+.item-next-concerts .next-concert-quaver img { //img quaver
+  
+}
+
+.item-next-concerts .next-concert-data { //container data
+  margin-left: 30px;
+  float: left;
+}
+
+.item-next-concerts .fix-data-date { //container fix data date
+    width: 130px;
+}
+
+.item-next-concerts .fix-data-time { //container fix data time
+    width: 106px;
+}
+
+.item-next-concerts .title { //title txts
+  color: $grey_light;
+  text-transform: uppercase;
+  font-size: 11pt;
+}
+
+.item-next-concerts .data { //data txts
+  color: $grey_light;
+  text-transform: uppercase;
+  font-size: 26pt;
+  margin-top: -5px;
+}
+
+.item-next-concerts .hour { //hour txts
+  color: $grey_dark;
+}
+
+.item-next-concerts .share-social { //container social
+  float: right;
+}
