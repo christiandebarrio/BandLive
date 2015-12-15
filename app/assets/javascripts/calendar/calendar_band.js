@@ -135,21 +135,21 @@ function putVenuesAvailables (date) {
       divVenuesAvailables.append('<h1>- Select a venue</h1>');
       venuesAvailables.venues.forEach(function (venue) {
         var htmlPanel =  '\
-            <article class="container" id="venue-available">\
-              <div class="col-md-1 col-sm-1" id="venue-available-thunder">\
+            <article class="container venue-available">\
+              <div class="col-md-1 col-sm-1 venue-available-thunder">\
                 <img src="/assets/thunder.png" alt="thunder">\
               </div>\
-              <div class="col-md-2 col-sm-2" id="venue-available-img">\
+              <div class="col-md-2 col-sm-2 venue-available-img">\
                 <img src="/assets/' + venue.photo +'" alt="' + venue.name + '">\
               </div>\
               <header class="col-md-4 col-sm-4">\
                 <span class="venue-available-title">Venue name</span>\
-                <h1 id="venue-available-name" data-id="' + venue.id + '">' + venue.name + '</h1>\
+                <h1 class="venue-available-name" data-id="' + venue.id + '">' + venue.name + '</h1>\
                 <div class="venue-available-play-here">\
                   <a href="" class="btn btn-pink btn-play-here">Play here</a>\
                 </div>\
               </header>\
-              <div class="col-md-5 col-sm-5" id="venue-available-body">\
+              <div class="col-md-5 col-sm-5 venue-available-body">\
                 <span class="venue-available-title">Address</span>\
                 <p class="venue-available-data">' + venue.address + '</p>\
                 <span class="venue-available-title">email</span>\
@@ -169,7 +169,7 @@ $(document).ready(function() {
   function createConcert (event) {
     event.preventDefault();
     var new_concert = { concert: {
-      venue_id: event.currentTarget.parentElement.parentElement.querySelector("#venue-available-name").getAttribute('data-id'),
+      venue_id: event.currentTarget.parentElement.parentElement.querySelector(".venue-available-name").getAttribute('data-id'),
       band_id: $(".profile-band-name").attr('data-id'),
       date: $(".selected").attr('data-date'),
       time: "23:00"}
