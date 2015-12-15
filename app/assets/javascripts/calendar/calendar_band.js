@@ -57,7 +57,7 @@ function putConcerts () {
             </div>';     
       divOustandingConcerts.append(html_message);
 
-      divOustandingConcerts.append('<ul id="list-next-concerts container>');
+      divOustandingConcerts.append('<ul class="list-next-concerts container"></ul>');
 
       outstandingConcerts.forEach(function (concert) { 
         var html =  '\
@@ -81,11 +81,9 @@ function putConcerts () {
               <a href="" class="btn btn-green btn-share">Share</a>\
             </div>\
           </li>';
-        divOustandingConcerts.append(html);
+        $('.list-next-concerts').append(html);
 
       });
-
-      divOustandingConcerts.append('</ul>');
 
     };
   }
