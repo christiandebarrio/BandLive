@@ -6,25 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Participant.create(name: "Francis", 
-                   email: "francisvitro@gmail.com", 
-                   instrument: "drums",
-                   photo: "participants/francis.jpg")
-
-Participant.create(name: "Eric", 
-                   email: "eric@email.com", 
-                   instrument: "guitar & vocals",
-                   photo: "participants/eric.jpg")
-
-Participant.create(name: "julia", 
-                   email: "julia@email.com", 
-                   instrument: "guitar & vocals",
-                   photo: "participants/julia.jpg")
-
-francis = Participant.find_by_id(1)
-eric = Participant.find_by_id(2)
-julia = Participant.find_by_id(3)
-
 description_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt dolor in velit molestie, at finibus risus fermentum. Quisque ultrices semper purus imperdiet viverra. In at est libero. Maecenas nisi justo, iaculis a convallis non, varius vitae enim. Vestibulum vitae leo sit amet metus sagittis gravida. Morbi nunc lacus, ornare vel metus in, lacinia mattis turpis. Praesent non tempor nisl, sed dignissim nunc."
 
 Band.create(name: "Topper Chopper", 
@@ -55,6 +36,25 @@ topper_chopper = Band.find_by_id(1)
 cardigan = Band.find_by_id(2)
 colors = Band.find_by_id(3)
 
+Participant.create(name: "Francis", 
+                   email: "francisvitro@gmail.com", 
+                   instrument: "drums",
+                   photo: "participants/francis.jpg")
+
+Participant.create(name: "Eric", 
+                   email: "eric@email.com", 
+                   instrument: "guitar & vocals",
+                   photo: "participants/eric.jpg")
+
+Participant.create(name: "Julia", 
+                   email: "julia@email.com", 
+                   instrument: "guitar & vocals",
+                   photo: "participants/julia.jpg")
+
+topper_chopper.participants << Participant.find_by_name("Francis")
+topper_chopper.participants << Participant.find_by_name("Eric")
+cardigan.participants << Participant.find_by_name("Julia")
+
 Venue.create(name: "Moby Dick",
              email: "mobydick@email.com",
              address: "Av. de Brasil, 5, 28020 Madrid",
@@ -70,13 +70,39 @@ Venue.create(name: "El Chico Feo",
              address: "Calle Covarrubias, 21, 28010 Madrid",
              photo: "venues/el-chico-feo.jpg")
 
+Venue.create(name: "Cafe Leka Leka",
+             email: "lekaleka@email.com",
+             address: "Calle Barbieri, 8, 28004 Madrid",
+             photo: "venues/cafe-leka-leka.jpg")
+
+Venue.create(name: "Cafe Populart",
+             email: "cafepopulart@email.com",
+             address: "Calle de Las Huertas, 22, 28014 Madrid",
+             photo: "venues/cafe-populart.jpg")
+
+Venue.create(name: "Soul Station",
+             email: "soulstation@email.com",
+             address: "Cuesta Santo Domingo, 22, 28013 Madrid",
+             photo: "venues/soul-station.jpg")
+
+Venue.create(name: "La Boca del Lobo",
+             email: "labocalobo@email.com",
+             address: "Calle de Argumosa, 11, 28012 Madrid",
+             photo: "venues/la-boca-del-lobo.jpg")
+
+Venue.create(name: "La Coquette",
+             email: "lacoquette@email.com",
+             address: "Calle de las Hileras, 14, 28013 Madrid",
+             photo: "venues/la-coquette.jpg")
+
 moby_dick = Venue.find_by_id(1)
 honky_tonk = Venue.find_by_id(2)
 el_chico_feo = Venue.find_by_name("El Chico Feo")
-
-topper_chopper.participants << francis
-topper_chopper.participants << eric
-cardigan.participants << julia
+cafe_leka_leka = Venue.find_by_name("Cafe Leka Leka")
+cafe_populart = Venue.find_by_name("Cafe Populart")
+soul_station = Venue.find_by_name("Soul Station")
+la_boca_del_lobo = Venue.find_by_name("La Boca del Lobo")
+la_coquette = Venue.find_by_name("La Coquette")
 
 Concert.create(band_id: topper_chopper.id,
                venue_id: honky_tonk.id,
