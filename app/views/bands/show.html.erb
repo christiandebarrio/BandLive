@@ -1,28 +1,58 @@
-<div class="content container">
-  <section class="bands-show">
-    <div class="col-md-4">
-      <div class="show-image">
-        <%= image_tag @band.generate_photo_url(@band.name) %>
+<section id="band-info" class="container">
+  <div class="col-md-4">
+    <div id="profile-image">
+      <%= image_tag @band.generate_photo_url(@band.name) %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <%= image_tag "quaver.png" %>
+    <h2>Band</h2>
+    <h1 class="profile-band-name" data-id="<%= @band.id %>">
+      <%= @band.name %>
+    </h1>
+    <p><%= @band.description %></p>
+
+    <div id="band-properties">   
+      <div class="band-data">
+        <p class="title">gender:</p>
+        <p><%= @band.gender %></p>
+      </div>
+      <div class="band-data">
+        <p class="title">band type:</p>
+        <p><%= @band.bandtype %></p>
+      </div>
+      <div class="band-data">
+        <p class="title">city:</p>
+        <p><%= @band.city %></p>
+      </div>
+      <div class="band-data">
+        <p class="title">language:</p>
+        <p><%= @band.language %></p>
       </div>
     </div>
-    <div class="show-content col-md-8">
-      <h1 class="bands-name">
-        <%= @band.name %>
-      </h1>
-      <p>participants:</p>
-      <ul>
+
+    <div class="band-participants">
+      <p class="title">participants:</p>
+      <ul id="band-list-participants">
         <% @band.participants.each do |participant| %>
-           <li>
-             <%= link_to participant.name, band_participant_path(participant.band_id, participant.id) %>:
-             <%= participant.instrument %>           
+           <li class="item-band-list-participants">
+             <div class="participant-img">
+               <%= image_tag participant.generate_photo_url(participant.name) %>
+             </div>
+             <div class="participant-data">
+               <%= link_to participant.name, band_participant_path(participant.band_id, participant.id), class: "participant-name" %>
+               <p class="participant-instrument"><%= participant.instrument %></p>
+             </div>
            </li>   
         <% end %>    
       </ul>
-      <p>gender: <%= @band.gender %></p>
-      <p>band type: <%= @band.bandtype %></p>
-      <p>city: <%= @band.city %></p>
-      <p>language: <%= @band.language %></p>
-      <%= link_to "Profile" , band_profile_path(@band) ,class: "btn btn-green"%>
     </div>
-  </section>
-</div>
+
+    <%= link_to "Profile", band_profile_path(@band), class: "btn btn-green btn-profile"%>
+
+  </div>
+</section>
+
+<section id="next-concerts" class="container">
+  <%= render "next_concerts" %>
+</section>

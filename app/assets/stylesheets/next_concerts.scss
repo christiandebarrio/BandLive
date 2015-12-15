@@ -36,6 +36,10 @@
   margin-top: 0;
 }
 
+.list-next-concerts { //container list next concerts
+  padding: 0;
+}
+
 li.item-next-concerts { // container items li
   list-style-type: none;
   margin-top: 16px;
@@ -81,6 +85,11 @@ li.item-next-concerts { // container items li
 
 .item-next-concerts .hour { //hour txts
   color: $grey_dark;
+}
+
+.item-next-concerts .address { //address txts
+  font-size: 14pt;
+  text-transform: none;
 }
 
 .item-next-concerts .share-social { //container social

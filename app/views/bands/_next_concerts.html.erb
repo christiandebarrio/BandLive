@@ -1,0 +1,30 @@
+<h1>Next concerts</h1>
+<ul class="list-next-concerts container">
+
+<% @concerts.each do |concert| %>
+
+  <li class="item-next-concerts container">
+    <div class="next-concert-quaver">
+      <img src="/assets/quaver-little.png" alt="quaver"/>
+    </div>
+    <div class="next-concert-data fix-data-date">
+      <span class="title">Date</span>
+      <p class="data"><%= concert.date_next_concerts %></p>
+    </div>
+    <div class="next-concert-data fix-data-time">
+      <span class="title hour">Time</span>
+      <p class="data hour"><%= concert.time_format %></p>
+    </div>
+    <div class="next-concert-data">
+      <span class="title">Venue</span>
+      <p class="data"><%= concert.venue.name %></p>
+    </div>
+<!--     <div class="next-concert-data">
+      <span class="title">Address</span>
+      <p class="data address"><%= concert.venue.address %></p>
+    </div> -->
+  </li>
+
+<% end %>
+
+</ul>

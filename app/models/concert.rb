@@ -9,10 +9,22 @@ class Concert < ActiveRecord::Base
     message: "This venue have a concert in this day yet" }
 
   def self.order_by_date
-    order('date ASC')
+    order("date ASC")
   end
 
   def self.next_concerts
-    where('date >= ?', Date.today)
+    where("date >= ?", Date.today)
+  end
+
+  def time_format
+    time.strftime("%H:%M")
+  end
+
+  def date_next_concerts
+    date.strftime("%b %d")
+  end
+
+  def venue
+    Venue.find_by_id(venue_id)
   end
 end

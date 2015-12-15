@@ -12,5 +12,74 @@
 
 .show-image img {
   width: 100%;
+}
 
+#band-properties {
+  margin-top: 20px;
+}
+
+#band-info .band-data { //container data band
+  display: inline-block;
+  margin-right: 6%;
+  margin-bottom: 10px;
+}
+
+#band-info .title { //titles data band
+  text-transform: uppercase;
+  color: $grey_light;
+  font-size: 12pt;
+}
+
+#band-info .btn-profile { //btn profile
+  float: right;
+}
+
+.band-participants {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+ul#band-list-participants {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.item-band-list-participants {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 35px;
+}
+
+#band-info .participant-img { //container img participant
+  width: 40px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#band-info .participant-img img { //img participant
+  width: 100%;
+}
+
+#band-info .participant-data { //container participant data
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#band-info a.participant-name { //name participant data
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+#band-info a.participant-name:hover { //name participant data
+  color: $pink;
+}
+
+#band-info .participant-instrument { //instrument participant data
+  margin-top: -6px;
+  color: $grey_light;
+}
+
+#next-concerts {
+  // background-color: $grey_light;
 }

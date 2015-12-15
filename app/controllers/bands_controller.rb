@@ -2,6 +2,7 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find_by_id(params[:id])
+    @concerts = @band.concerts.next_concerts.order_by_date
   end
 
   def index
