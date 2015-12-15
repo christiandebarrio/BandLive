@@ -106,30 +106,32 @@ function putVenuesAvailables (date) {
     divVenuesAvailables.empty();
 
     if(venuesAvailables.venues.length === 0) {
-      divVenuesAvailables.append('<h1>No venues availables in ' + htmldate + '</h1>');
+      divVenuesAvailables.append('<h1>No venues availables</h1>');
     } else {
-      divVenuesAvailables.append('<h1>- Select a venue for ' + htmldate + '</h1>');
+      divVenuesAvailables.append('<h1>- Select a venue</h1>');
       venuesAvailables.venues.forEach(function (venue) {
         var htmlPanel =  '\
-          <div class="col-md-3 col-sm-6">\
-            <a href="/venues/' + venue.id + '" id="panel-link">\
-              <article class="panel">\
-                <div class="panel-image">\
-                  <img src="/assets/' + venue.photo +'" alt="' + venue.name + '">\
+            <article class="container" id="venue-available">\
+              <div class="col-md-1 col-sm-1" id="venue-available-thunder">\
+                <img src="/assets/thunder.png" alt="thunder">\
+              </div>\
+              <div class="col-md-2 col-sm-2" id="venue-available-img">\
+                <img src="/assets/' + venue.photo +'" alt="' + venue.name + '">\
+              </div>\
+              <header class="col-md-4 col-sm-4">\
+                <span class="venue-available-title">Venue name</span>\
+                <h1 id="venue-available-name" data-id="' + venue.id + '">' + venue.name + '</h1>\
+                <div class="venue-available-play-here">\
+                  <a href="" class="btn btn-pink btn-play-here">Play here</a>\
                 </div>\
-                <header>\
-                  <h1 id="venue-name" data-id="' + venue.id + '">' + venue.name + '</h1>\
-                </header>\
-                <div class="panel-content">\
-                  <p>email: ' + venue.email + '</p>\
-                  <p>address: ' + venue.address + '</p>\
-                </div>\
-                <div class="play-here">\
-                  <a href="" class="btn btn-green btn-play-here">Play here</a>\
-                </div>\
-              </article>\
-            </a>\
-          </div>';
+              </header>\
+              <div class="col-md-5 col-sm-5" id="venue-available-body">\
+                <span class="venue-available-title">Address</span>\
+                <p class="venue-available-data">' + venue.address + '</p>\
+                <span class="venue-available-title">email</span>\
+                <p class="venue-available-data">' + venue.email + '</p>\
+              </div>\
+            </article>';
 
         divVenuesAvailables.append(htmlPanel);
       });
@@ -143,9 +145,9 @@ $(document).ready(function() {
   function createConcert (event) {
     event.preventDefault();
     var new_concert = { concert: {
-      venue_id: event.currentTarget.parentElement.parentElement.querySelector("#venue-name").getAttribute('data-id'),
+      venue_id: event.currentTarget.parentElement.parentElement.querySelector("#venue-available-name").getAttribute('data-id'),
       band_id: $(".profile-band-name").attr('data-id'),
-      date: $(".date-selected").text(),
+      date: $(".selected").attr('data-date'),
       time: "23:00"}
     }
 

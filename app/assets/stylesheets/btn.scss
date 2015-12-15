@@ -22,7 +22,7 @@
 
 .btn-green {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: $green;
   border: 0;
   padding: 7px 30px;
 }
@@ -34,7 +34,7 @@
 
 .panel .btn-green {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: $green;
   border: 0;
   padding: 7px 30px;
   border: 2px solid white;
@@ -44,4 +44,16 @@
   color: #fff;
   background-color: #FE4D55;
   border: 2px solid $green;
+}
+
+.btn-pink {
+  color: #fff;
+  background-color: $pink;
+  border: 0;
+  padding: 7px 30px;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: $green;
 }
