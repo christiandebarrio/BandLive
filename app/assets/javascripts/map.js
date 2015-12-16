@@ -2,8 +2,8 @@ $(document).ready(function() {
   var map;
 
   var itemPosition = {
-    lat: 44.5403,// position.coords.latitude,
-    lng: -78.5463// position.coords.longitude
+    lat: parseFloat($('#venue-address').attr('data-latitude')),// position.coords.latitude,
+    lng: parseFloat($('#venue-address').attr('data-longitude'))// position.coords.longitude
   };
 
   $("#venue-address").text()
@@ -14,7 +14,7 @@ $(document).ready(function() {
       zoom: 17
     };
     map = new google.maps.Map($('#map')[0], mapOptions);
-    // createMarker(position);
+    createMarker(position);
     // loadPositions();
   }
 

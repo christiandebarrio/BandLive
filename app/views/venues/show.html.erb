@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 <div class="content container">
   <section class="venues-show">
     <div class="col-md-4">
@@ -12,7 +13,7 @@
       <p>email: </p>
       <p id="venue-email"><%= @venue.email %></p>
       <p>address: </p> 
-      <p id="venue-address"><%= @venue.address %></p> 
+      <p id="venue-address" data-latitude="<%= @venue.latitude %>" data-longitude="<%= @venue.longitude %>"><%= @venue.address %></p> 
       <div id="map"></div>
     </div>
   </section>
