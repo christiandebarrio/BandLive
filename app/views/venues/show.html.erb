@@ -9,12 +9,15 @@
       <h1 class="venues-name">
         <%= @venue.name %>
       </h1>
-      <p>email: <%= @venue.email %></p>
-      <p>address: <%= @venue.address %></p> 
+      <p>email: </p>
+      <p id="venue-email"><%= @venue.email %></p>
+      <p>address: </p> 
+      <p id="venue-address"><%= @venue.address %></p> 
+      <div id="map"></div>
     </div>
   </section>
 
-  <section class="container col-md-12 next-concerts">
+<!--   <section class="container col-md-12 next-concerts">
     <h1>Next Concerts</h1>
-  </section>
+  </section> -->
 </div>

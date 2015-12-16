@@ -12,6 +12,7 @@ function fill_empty_days () {
 }
 
 function putConcerts () {
+  var bandName = $('.profile-band-name').text();
   var bandId = $('.profile-band-name').attr('data-id');
   $('.calendar-venues-availables').empty();
   console.log('trying to get concerts');
@@ -78,15 +79,35 @@ function putConcerts () {
               <p class="data">' + concert.venue_name + '</p>\
             </div>\
             <div class="share-social">\
-              <a href="" class="btn btn-green btn-share">Share</a>\
+              <div class="fb-share-button" \
+              data-href="https://localhost3000/concerts/' + concert.id + '" \
+              data-layout="button"></div>\
+              <a href="https://twitter.com/share" \
+              class="twitter-share-button" \
+              data-url="http://localhost3000/concerts/' + concert.id + '" \
+              data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
+              data-hashtags="' + bandName + ', livemusic">Tweet</a>\
             </div>\
           </li>';
         $('.list-next-concerts').append(html);
-
       });
+      var scriptFacebook ='\
+        <div id="fb-root"></div>\
+        <script>(function(d, s, id) {\
+          var js, fjs = d.getElementsByTagName(s)[0];\
+          if (d.getElementById(id)) return;\
+          js = d.createElement(s); js.id = id;\
+          js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.5";\
+          fjs.parentNode.insertBefore(js, fjs);\
+        }(document, "script", "facebook-jssdk"));</script>';
+      var scriptTweeter = "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+':\//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>";
+      $('.list-next-concerts').append(scriptFacebook);
+      $('.list-next-concerts').append(scriptTweeter);
 
     };
   }
+
+  // <a href="" class="btn btn-green btn-share">Share</a>\
 
   function printConcerts (concerts) {
     $('.fc-day-number').removeClass('selected')

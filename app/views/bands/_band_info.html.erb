@@ -7,9 +7,7 @@
   <div class="col-md-9">
     <%= image_tag "quaver.png" %>
     <h2>Events</h2>
-    <h1 class="profile-band-name" data-id="<%= @band.id %>">
-      <%= @band.name %>
-    </h1>
+    <h1 class="profile-band-name" data-id="<%= @band.id %>"><%= @band.name %></h1>
     <p><%= @band.description %></p>
   </div>
 </section>

@@ -1,8 +1,7 @@
 $(document).ready(function() {
   'use strict';
     // page is now ready, initialize the calendar...
-
-
+    
   $('#calendar').fullCalendar({
 
     height: 765,
