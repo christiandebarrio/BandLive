@@ -63,36 +63,38 @@ function putConcerts () {
       outstandingConcerts.forEach(function (concert) { 
         var html =  '\
           <li class="item-next-concerts container">\
-            <div class="next-concert-quaver">\
-              <img src="/assets/quaver-little.png" alt="quaver"/>\
-            </div>\
-            <div class="next-concert-data fix-data-date">\
-              <span class="title">Date</span>\
-              <p class="data">' + dateMonthDay(concert.date) + '</p>\
-            </div>\
-            <div class="next-concert-data fix-data-time">\
-              <span class="title hour">Time</span>\
-              <p class="data hour">' + concert.time + '</p>\
-            </div>\
-            <div class="next-concert-data">\
-              <span class="title">Venue</span>\
-              <p class="data">' + concert.venue_name + '</p>\
-            </div>\
-            <div class="share-social">\
-              <div class="wraper-social-btn">\
-                <a href="https://twitter.com/share" \
-                  class="twitter-share-button" \
-                  data-url="http://localhost3000/concerts/' + concert.id + '" \
-                  data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
-                  data-hashtags="' + bandName + ', livemusic">Tweet</a>\
+            <a href="/concerts/' + concert.id + '">\
+              <div class="next-concert-quaver">\
+                <img src="/assets/quaver-little.png" alt="quaver"/>\
               </div>\
-              <div class="wraper-social-btn">\
-                <div class="fb-share-button" \
-                  data-href="https://localhost3000/concerts/' + concert.id + '" \
-                  data-layout="button">\
+              <div class="next-concert-data fix-data-date">\
+                <span class="title">Date</span>\
+                <p class="data">' + dateMonthDay(concert.date) + '</p>\
+              </div>\
+              <div class="next-concert-data fix-data-time">\
+                <span class="title hour">Time</span>\
+                <p class="data hour">' + concert.time + '</p>\
+              </div>\
+              <div class="next-concert-data">\
+                <span class="title">Venue</span>\
+                <p class="data">' + concert.venue_name + '</p>\
+              </div>\
+              <div class="share-social">\
+                <div class="wraper-social-btn">\
+                  <a href="https://twitter.com/share" \
+                    class="twitter-share-button" \
+                    data-url="http://localhost3000/concerts/' + concert.id + '" \
+                    data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
+                    data-hashtags="' + bandName + ', livemusic">Tweet</a>\
+                </div>\
+                <div class="wraper-social-btn">\
+                  <div class="fb-share-button" \
+                    data-href="https://localhost3000/concerts/' + concert.id + '" \
+                    data-layout="button">\
+                  </div>\
                 </div>\
               </div>\
-            </div>\
+            </a>\
           </li>';
         $('.list-next-concerts').append(html);
       });
