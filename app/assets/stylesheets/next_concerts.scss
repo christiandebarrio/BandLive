@@ -2,10 +2,11 @@
 
 #next-concerts { //container
   margin-top: 30px;
-  background-color: #D4DADE;
-  padding-top: 20px;
-  padding-bottom: 33px;
 }
+
+  // background-color: #D4DADE;
+  // padding-top: 20px;
+  // padding-bottom: 33px;
 
 #next-concerts h1 { //title
   font-size: 34pt;
@@ -97,5 +98,11 @@ li.item-next-concerts { // container items li
 }
 
 .item-next-concerts .share-social { //container social
+  float: right;
+  margin-top: 30px;
+}
+
+.item-next-concerts .wraper-social-btn { //facebook button
+  margin-left: 12px;
   float: right;
 }

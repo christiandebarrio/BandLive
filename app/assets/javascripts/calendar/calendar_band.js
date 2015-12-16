@@ -79,14 +79,19 @@ function putConcerts () {
               <p class="data">' + concert.venue_name + '</p>\
             </div>\
             <div class="share-social">\
-              <div class="fb-share-button" \
-              data-href="https://localhost3000/concerts/' + concert.id + '" \
-              data-layout="button"></div>\
-              <a href="https://twitter.com/share" \
-              class="twitter-share-button" \
-              data-url="http://localhost3000/concerts/' + concert.id + '" \
-              data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
-              data-hashtags="' + bandName + ', livemusic">Tweet</a>\
+              <div class="wraper-social-btn">\
+                <a href="https://twitter.com/share" \
+                  class="twitter-share-button" \
+                  data-url="http://localhost3000/concerts/' + concert.id + '" \
+                  data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
+                  data-hashtags="' + bandName + ', livemusic">Tweet</a>\
+              </div>\
+              <div class="wraper-social-btn">\
+                <div class="fb-share-button" \
+                  data-href="https://localhost3000/concerts/' + concert.id + '" \
+                  data-layout="button">\
+                </div>\
+              </div>\
             </div>\
           </li>';
         $('.list-next-concerts').append(html);
