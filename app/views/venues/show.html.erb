@@ -1,24 +1,32 @@
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-<div class="content container">
-  <section class="venues-show">
-    <div class="col-md-4">
-      <div class="show-image">
-        <%= image_tag @venue.generate_photo_url(@venue.name) %>
+
+<section id="show-info" class="container">
+  <div class="col-md-4">
+    <div id="show-image">
+      <%= image_tag @venue.generate_photo_url(@venue.name) %>
+    </div>
+  </div>
+  <div class="show-content col-md-8">
+    <%= image_tag "quaver.png", class: "quaver-icon", alt: "quaver" %>
+    <h2 class="show-category">Venue</h2>
+    <h1 class="venues-name">
+      <%= @venue.name %>
+    </h1>
+    <p><%= @venue.description %></p>
+    <div id="show-properties">
+      <div class="show-data">
+        <p class="title">email: </p>
+        <p id="venue-email"><%= @venue.email %></p>
       </div>
-    </div>
-    <div class="show-content col-md-8">
-      <h1 class="venues-name">
-        <%= @venue.name %>
-      </h1>
-      <p>email: </p>
-      <p id="venue-email"><%= @venue.email %></p>
-      <p>address: </p> 
-      <p id="venue-address" data-latitude="<%= @venue.latitude %>" data-longitude="<%= @venue.longitude %>"><%= @venue.address %></p> 
-      <div id="map"></div>
-    </div>
-  </section>
+      <div class="show-data">
+        <p class="title">address: </p> 
+        <p id="venue-address" data-latitude="<%= @venue.latitude %>" data-longitude="<%= @venue.longitude %>"><%= @venue.address %></p>
+      </div>
+    </div> 
+    <div id="map"></div>
+  </div>
+</section>
 
 <!--   <section class="container col-md-12 next-concerts">
     <h1>Next Concerts</h1>
   </section> -->
-</div>

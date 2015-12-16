@@ -4,33 +4,50 @@
 
 @import "_variables";
 
-.show-image {
+#show-info {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: $grey_dark;
+}
+
+#show-info .quaver-icon {
+  display: inline;
+}
+
+#show-info .show-category {
+  color: $grey_light;
+  display: inline;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#show-image {
   overflow: hidden;
   // border-radius: 15px;
   box-shadow: 4px 4px 30px -9px #A6A8AB;
 }
 
-.show-image img {
+#show-image img {
   width: 100%;
 }
 
-#band-properties {
-  margin-top: 20px;
+#show-properties {
+  // margin-top: 20px;
 }
 
-#band-info .band-data { //container data band
+#show-info .show-data { //container data band
   display: inline-block;
   margin-right: 6%;
-  margin-bottom: 10px;
+  margin-bottom: -6px;
 }
 
-#band-info .title { //titles data band
+#show-info .title { //titles data band
   text-transform: uppercase;
   color: $grey_light;
   font-size: 12pt;
 }
 
-#band-info .btn-profile { //btn profile
+#show-info .btn-profile { //btn profile
   float: right;
 }
 
@@ -50,32 +67,32 @@ ul#band-list-participants {
   margin-right: 35px;
 }
 
-#band-info .participant-img { //container img participant
+#show-info .participant-img { //container img participant
   width: 40px;
   border-radius: 25px;
   overflow: hidden;
   display: inline-block;
 }
 
-#band-info .participant-img img { //img participant
+#show-info .participant-img img { //img participant
   width: 100%;
 }
 
-#band-info .participant-data { //container participant data
+#show-info .participant-data { //container participant data
   display: inline-block;
   margin-left: 15px;
 }
 
-#band-info a.participant-name { //name participant data
+#show-info a.participant-name { //name participant data
   font-size: 14pt;
   font-weight: bold;
 }
 
-#band-info a.participant-name:hover { //name participant data
+#show-info a.participant-name:hover { //name participant data
   color: $pink;
 }
 
-#band-info .participant-instrument { //instrument participant data
+#show-info .participant-instrument { //instrument participant data
   margin-top: -6px;
   color: $grey_light;
 }

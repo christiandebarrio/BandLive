@@ -58,42 +58,50 @@ cardigan.participants << Participant.find_by_name("Julia")
 Venue.create(name: "Moby Dick",
              email: "mobydick@email.com",
              address: "Av. de Brasil, 5, 28020 Madrid",
-             photo: "venues/moby-dick.jpg")
+             photo: "venues/moby-dick.jpg",
+             description: description_text)
 
 Venue.create(name: "Honky Tonk",
              email: "honkytonk@email.com",
              address: "Calle Covarrubias, 24, 28010 Madrid",
-             photo: "venues/honky-tonk.jpg")
+             photo: "venues/honky-tonk.jpg",
+             description: description_text)
 
 Venue.create(name: "El Chico Feo",
              email: "elchicofeo@email.com",
              address: "Calle Covarrubias, 21, 28010 Madrid",
-             photo: "venues/el-chico-feo.jpg")
+             photo: "venues/el-chico-feo.jpg",
+             description: description_text)
 
 Venue.create(name: "Cafe Leka Leka",
              email: "lekaleka@email.com",
              address: "Calle Barbieri, 8, 28004 Madrid",
-             photo: "venues/cafe-leka-leka.jpg")
+             photo: "venues/cafe-leka-leka.jpg",
+             description: description_text)
 
 Venue.create(name: "Cafe Populart",
              email: "cafepopulart@email.com",
              address: "Calle de Las Huertas, 22, 28014 Madrid",
-             photo: "venues/cafe-populart.jpg")
+             photo: "venues/cafe-populart.jpg",
+             description: description_text)
 
 Venue.create(name: "Soul Station",
              email: "soulstation@email.com",
              address: "Cuesta Santo Domingo, 22, 28013 Madrid",
-             photo: "venues/soul-station.jpg")
+             photo: "venues/soul-station.jpg",
+             description: description_text)
 
 Venue.create(name: "La Boca del Lobo",
              email: "labocalobo@email.com",
              address: "Calle de Argumosa, 11, 28012 Madrid",
-             photo: "venues/la-boca-del-lobo.jpg")
+             photo: "venues/la-boca-del-lobo.jpg",
+             description: description_text)
 
 Venue.create(name: "La Coquette",
              email: "lacoquette@email.com",
              address: "Calle de las Hileras, 14, 28013 Madrid",
-             photo: "venues/la-coquette.jpg")
+             photo: "venues/la-coquette.jpg",
+             description: description_text)
 
 moby_dick = Venue.find_by_id(1)
 honky_tonk = Venue.find_by_id(2)
@@ -109,33 +117,33 @@ Concert.create(band_id: topper_chopper.id,
                date: "6/12/2015",
                time: "20:00")
 
-Concert.create(band_id: topper_chopper.id,
+Concert.create(band_id: cardigan.id,
                venue_id: moby_dick.id,
                date: "15/12/2015",
                time: "21:00")
 
-Concert.create(band_id: topper_chopper.id,
-               venue_id: honky_tonk.id,
-               date: "16/12/2015",
-               time: "20:00")
-
-Concert.create(band_id: cardigan.id,
-               venue_id: moby_dick.id,
-               date: "16/12/2015",
-               time: "22:00")
-
 Concert.create(band_id: colors.id,
-               venue_id: el_chico_feo.id,
-               date: "16/12/2015",
-               time: "22:00")
-
-Concert.create(band_id: topper_chopper.id,
                venue_id: honky_tonk.id,
-               date: "20/12/2015",
+               date: "16/12/2015",
                time: "20:00")
 
-Concert.create(band_id: cardigan.id,
-               venue_id: honky_tonk.id,
-               date: "21/12/2015",
-               time: "23:00")
+# Concert.create(band_id: cardigan.id,
+#                venue_id: moby_dick.id,
+#                date: "16/12/2015",
+#                time: "22:00")
+
+# Concert.create(band_id: colors.id,
+#                venue_id: el_chico_feo.id,
+#                date: "16/12/2015",
+#                time: "22:00")
+
+# Concert.create(band_id: topper_chopper.id,
+#                venue_id: honky_tonk.id,
+#                date: "20/12/2015",
+#                time: "20:00")
+
+# Concert.create(band_id: cardigan.id,
+#                venue_id: honky_tonk.id,
+#                date: "21/12/2015",
+#                time: "23:00")
 

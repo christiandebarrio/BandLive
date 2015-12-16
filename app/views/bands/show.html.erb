@@ -1,31 +1,31 @@
-<section id="band-info" class="container">
+<section id="show-info" class="container">
   <div class="col-md-4">
-    <div id="profile-image">
+    <div id="show-image">
       <%= image_tag @band.generate_photo_url(@band.name) %>
     </div>
   </div>
   <div class="col-md-8">
-    <%= image_tag "quaver.png" %>
-    <h2>Band</h2>
+    <%= image_tag "quaver.png", class: "quaver-icon", alt: "quaver" %>
+    <h2 class="show-category">Band</h2>
     <h1 class="profile-band-name" data-id="<%= @band.id %>">
       <%= @band.name %>
     </h1>
     <p><%= @band.description %></p>
 
-    <div id="band-properties">   
-      <div class="band-data">
+    <div id="show-properties">   
+      <div class="show-data">
         <p class="title">gender:</p>
         <p><%= @band.gender %></p>
       </div>
-      <div class="band-data">
+      <div class="show-data">
         <p class="title">band type:</p>
         <p><%= @band.bandtype %></p>
       </div>
-      <div class="band-data">
+      <div class="show-data">
         <p class="title">city:</p>
         <p><%= @band.city %></p>
       </div>
-      <div class="band-data">
+      <div class="show-data">
         <p class="title">language:</p>
         <p><%= @band.language %></p>
       </div>
