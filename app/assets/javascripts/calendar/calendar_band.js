@@ -200,14 +200,14 @@ $(document).ready(function() {
     var request = $.post('/concerts', new_concert)
 
     function onRequestSuccess (response) {     
-      console.log('Request sended to create concert :', response);
-      putConcerts();
+      console.log('Request sended to create concert :', response); 
       $('html, body').animate({
         scrollTop: $("#calendar").offset().top - 50
       }, 800);
       setTimeout(function(){
          $('.calendar-venues-availables').empty();
       }, 1000);
+      putConcerts();
     }
 
     function onRequestFailure (err) {
