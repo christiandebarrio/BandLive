@@ -103,14 +103,14 @@ Venue.create(name: "La Coquette",
              photo: "venues/la-coquette.jpg",
              description: description_text)
 
-moby_dick = Venue.find_by_id(1)
-honky_tonk = Venue.find_by_id(2)
-el_chico_feo = Venue.find_by_name("El Chico Feo")
+moby_dick = Venue.find_by_name("Moby Dick")
+honky_tonk = Venue.find_by_name("Honky Tonk")
 cafe_leka_leka = Venue.find_by_name("Cafe Leka Leka")
 cafe_populart = Venue.find_by_name("Cafe Populart")
 soul_station = Venue.find_by_name("Soul Station")
 la_boca_del_lobo = Venue.find_by_name("La Boca del Lobo")
 la_coquette = Venue.find_by_name("La Coquette")
+el_chico_feo = Venue.find_by_name("El Chico Feo")
 
 # Concert.create(band_id: topper_chopper.id,
 #                venue_id: honky_tonk.id,
