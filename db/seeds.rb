@@ -16,12 +16,12 @@ Band.create(name: "Topper Chopper",
             photo: "bands/topper-chopper.jpg",
             description: description_text)
 
-Band.create(name: "Cardigan", 
+Band.create(name: "Leroy", 
             gender: "pop", 
             bandtype: "original", 
             city: "Cuenca", 
             language: "english",
-            photo: "bands/cardigan.jpg",
+            photo: "bands/leroy.jpg",
             description: description_text)
 
 Band.create(name: "Colors", 
@@ -41,7 +41,7 @@ Band.create(name: "Divinities",
             description: description_text)
 
 topper_chopper = Band.find_by_name("Topper Chopper")
-cardigan = Band.find_by_name("Cardigan")
+leroy = Band.find_by_name("Leroy")
 colors = Band.find_by_name("Colors")
 divinities = Band.find_by_name("Divinities")
 
@@ -98,8 +98,8 @@ Participant.create(name: "Irma",
 topper_chopper.participants << Participant.find_by_name("Francis")
 topper_chopper.participants << Participant.find_by_name("Eric")
 topper_chopper.participants << Participant.find_by_name("Fernando")
-cardigan.participants << Participant.find_by_name("Julia")
-cardigan.participants << Participant.find_by_name("Angy")
+leroy.participants << Participant.find_by_name("Julia")
+leroy.participants << Participant.find_by_name("Angy")
 colors.participants << Participant.find_by_name("Fred")
 colors.participants << Participant.find_by_name("Pablo")
 divinities.participants << Participant.find_by_name("Ana")
@@ -168,7 +168,7 @@ cafe_populart = Venue.find_by_name("Cafe Populart")
 #                date: "6/12/2015",
 #                time: "20:00")
 
-# Concert.create(band_id: cardigan.id,
+# Concert.create(band_id: leroy.id,
 #                venue_id: moby_dick.id,
 #                date: "15/12/2015",
 #                time: "21:00")
@@ -178,7 +178,7 @@ cafe_populart = Venue.find_by_name("Cafe Populart")
 #                date: "16/12/2015",
 #                time: "20:00")
 
-# Concert.create(band_id: cardigan.id,
+# Concert.create(band_id: leroy.id,
 #                venue_id: moby_dick.id,
 #                date: "16/12/2015",
 #                time: "22:00")
@@ -193,7 +193,7 @@ cafe_populart = Venue.find_by_name("Cafe Populart")
 #                date: "20/12/2015",
 #                time: "20:00")
 
-# Concert.create(band_id: cardigan.id,
+# Concert.create(band_id: leroy.id,
 #                venue_id: honky_tonk.id,
 #                date: "21/12/2015",
 #                time: "23:00")
