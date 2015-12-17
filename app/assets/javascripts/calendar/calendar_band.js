@@ -14,7 +14,7 @@ function fill_empty_days () {
 function putConcerts () {
   var bandName = $('.profile-band-name').text();
   var bandId = $('.profile-band-name').attr('data-id');
-  $('.calendar-venues-availables').empty();
+  
   console.log('trying to get concerts');
 
   var request = $.get('/calendar/bands/' + bandId + '/concerts');
@@ -205,6 +205,9 @@ $(document).ready(function() {
       $('html, body').animate({
         scrollTop: $("#calendar").offset().top - 50
       }, 800);
+      setTimeout(function(){
+         $('.calendar-venues-availables').empty();
+      }, 1000);
     }
 
     function onRequestFailure (err) {
