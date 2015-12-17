@@ -20,7 +20,6 @@ $(document).ready(function() {
 
         $('[class*="fc-day"]').removeClass('selected');
         $('[class*="fc-day"][data-date=' + date + ']').addClass('selected');
-        console.log('Date selected: ' + date);
       
         putVenuesAvailables(date);
         $('html, body').animate({
@@ -36,5 +35,3 @@ $(document).ready(function() {
  
   });
 });
-
-// <div class="plus-icon">+</div>

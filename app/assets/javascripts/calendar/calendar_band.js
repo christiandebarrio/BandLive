@@ -14,15 +14,11 @@ function fill_empty_days () {
 function putConcerts () {
   var bandName = $('.profile-band-name').text();
   var bandId = $('.profile-band-name').attr('data-id');
-  
-  console.log('trying to get concerts');
-
   var request = $.get('/calendar/bands/' + bandId + '/concerts');
   
   function onRequestSuccess (response) {
     printConcerts(response);
     putOutstandingConcerts(response, bandName);
-    console.log('Concerts of band_id: ', bandId,': ', response);
   }
 
   function onRequestFailure (err) {
@@ -41,14 +37,12 @@ function putConcerts () {
 //   </div>\
 // </div>\
 
-  // <a href="" class="btn btn-green btn-share">Share</a>\
+// <a href="" class="btn btn-green btn-share">Share</a>\
 
   function printConcerts (concerts) {
     $('.fc-day-number').removeClass('selected')
     $('.fc-content-skeleton .event').remove();
     concerts.band_concerts.forEach(function (concert) {
-      console.log(concert.date);
-
       $('[data-date=' + concert.date + ']').addClass('concert');
       $('.fc-content-skeleton [data-date=' + concert.date + ']').append('\
         <img src="/assets/quaver-calendar.png" alt="quaver" class="event"/>\
@@ -128,13 +122,11 @@ function putOutstandingConcerts (concerts, bandName) {
 }
 
 function putVenuesAvailables (date) {
-  console.log('Trying to get venues availables');
 
   var request = $.get('/calendar/venues-availables/' + date)
 
   function onRequestSuccess (response) {
     printVenuesAvailables(response);
-    console.log('Venues :', response);
   }
 
   function onRequestFailure (err) {
@@ -200,7 +192,6 @@ $(document).ready(function() {
     var request = $.post('/concerts', new_concert)
 
     function onRequestSuccess (response) {     
-      console.log('Request sended to create concert :', response); 
       $('html, body').animate({
         scrollTop: $("#calendar").offset().top - 50
       }, 800);

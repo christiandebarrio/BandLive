@@ -4,7 +4,6 @@ var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov'
 function dateFormat (date) {
   var dateformat = new Date(date)
   var year_number = dateformat.getFullYear();
-  // var year_number = date.split("-")[0];
   var month_number = dateformat.getMonth();
   var month = months[month_number];
   var day_number = dateformat.getDate();

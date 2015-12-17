@@ -15,7 +15,6 @@ $(document).ready(function() {
     };
     map = new google.maps.Map($('#map')[0], mapOptions);
     createMarker(position);
-    // loadPositions();
   }
 
   function createMarker(position) {
