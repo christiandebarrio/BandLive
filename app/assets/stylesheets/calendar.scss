@@ -153,11 +153,14 @@ td.fc-past { // past cells calendar border
   -webkit-filter: invert(50%);
 }
 
-#calendar .fc-day-number.concert:not.fc-today:hover { // today content hover if no concert
+#calendar .fc-day-number.fc-today:hover { // today content hover if no concert
   color: $grey_dark;
-  font-weight: bold;
-  // border-top: 4px solid $white;
-  // border-left: 4px solid $white;  
+  font-weight: bold; 
+}
+
+#calendar .fc-day-number.fc-today.concert:hover { // today content hover if no concert
+  color: $grey_light;
+  font-weight: normal;
 }
 
 // #calendar .fc-day-number.fc-today:hover img { // today concert quaver
