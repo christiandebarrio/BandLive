@@ -11,12 +11,9 @@ Rails.application.routes.draw do
 
   resources :concerts, only: [:index, :show, :create]
 
-
-  get "/login" => "login#show"
-
   get "/calendar/bands/:id/concerts" => "calendar#band_concerts"
   get "/calendar/venues-availables/:date" => "calendar#venues_availables"
-  # get "/calendar/band/:id/outstanding_concerts" => "calendar#outstanding_concerts"
+  
   
 
   
