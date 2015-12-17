@@ -32,9 +32,18 @@ Band.create(name: "Colors",
             photo: "bands/colors.jpg",
             description: description_text)
 
-topper_chopper = Band.find_by_id(1)
-cardigan = Band.find_by_id(2)
-colors = Band.find_by_id(3)
+Band.create(name: "Divinities", 
+            gender: "pop-rock", 
+            bandtype: "original", 
+            city: "Madrid", 
+            language: "english",
+            photo: "bands/divinities.jpg",
+            description: description_text)
+
+topper_chopper = Band.find_by_name("Topper Chopper")
+cardigan = Band.find_by_name("Cardigan")
+colors = Band.find_by_name("Colors")
+divinities = Band.find_by_name("Divinities")
 
 Participant.create(name: "Francis", 
                    email: "francisvitro@gmail.com", 
@@ -46,14 +55,56 @@ Participant.create(name: "Eric",
                    instrument: "guitar & vocals",
                    photo: "participants/eric.jpg")
 
+Participant.create(name: "Fernando", 
+                   email: "fernando@email.com", 
+                   instrument: "keyboards",
+                   photo: "participants/fernando.jpg")
+
 Participant.create(name: "Julia", 
                    email: "julia@email.com", 
                    instrument: "guitar & vocals",
                    photo: "participants/julia.jpg")
 
+Participant.create(name: "Angy", 
+                   email: "angy@email.com", 
+                   instrument: "bass",
+                   photo: "participants/angy.jpg")
+
+Participant.create(name: "Fred", 
+                   email: "fred@email.com", 
+                   instrument: "bass",
+                   photo: "participants/fred.jpg")
+
+Participant.create(name: "Pablo", 
+                   email: "pablo@email.com", 
+                   instrument: "violin",
+                   photo: "participants/pablo.jpg")
+
+Participant.create(name: "Ana", 
+                   email: "ana@email.com", 
+                   instrument: "drums",
+                   photo: "participants/ana.jpg")
+
+Participant.create(name: "Marta", 
+                   email: "marta@email.com", 
+                   instrument: "bass",
+                   photo: "participants/marta.jpg")
+
+Participant.create(name: "Irma", 
+                   email: "irma@email.com", 
+                   instrument: "guitar & vocals",
+                   photo: "participants/irma.jpg")
+
 topper_chopper.participants << Participant.find_by_name("Francis")
 topper_chopper.participants << Participant.find_by_name("Eric")
+topper_chopper.participants << Participant.find_by_name("Fernando")
 cardigan.participants << Participant.find_by_name("Julia")
+cardigan.participants << Participant.find_by_name("Angy")
+colors.participants << Participant.find_by_name("Fred")
+colors.participants << Participant.find_by_name("Pablo")
+divinities.participants << Participant.find_by_name("Ana")
+divinities.participants << Participant.find_by_name("Marta")
+divinities.participants << Participant.find_by_name("Irma")
 
 Venue.create(name: "Moby Dick",
              email: "mobydick@email.com",
@@ -65,12 +116,6 @@ Venue.create(name: "Honky Tonk",
              email: "honkytonk@email.com",
              address: "Calle Covarrubias, 24, 28010 Madrid",
              photo: "venues/honky-tonk.jpg",
-             description: description_text)
-
-Venue.create(name: "El Chico Feo",
-             email: "elchicofeo@email.com",
-             address: "Calle Covarrubias, 21, 28010 Madrid",
-             photo: "venues/el-chico-feo.jpg",
              description: description_text)
 
 Venue.create(name: "Cafe Leka Leka",
@@ -85,23 +130,29 @@ Venue.create(name: "Cafe Populart",
              photo: "venues/cafe-populart.jpg",
              description: description_text)
 
-Venue.create(name: "Soul Station",
-             email: "soulstation@email.com",
-             address: "Cuesta Santo Domingo, 22, 28013 Madrid",
-             photo: "venues/soul-station.jpg",
-             description: description_text)
+# Venue.create(name: "Soul Station",
+#              email: "soulstation@email.com",
+#              address: "Cuesta Santo Domingo, 22, 28013 Madrid",
+#              photo: "venues/soul-station.jpg",
+#              description: description_text)
 
-Venue.create(name: "La Boca del Lobo",
-             email: "labocalobo@email.com",
-             address: "Calle de Argumosa, 11, 28012 Madrid",
-             photo: "venues/la-boca-del-lobo.jpg",
-             description: description_text)
+# Venue.create(name: "La Boca del Lobo",
+#              email: "labocalobo@email.com",
+#              address: "Calle de Argumosa, 11, 28012 Madrid",
+#              photo: "venues/la-boca-del-lobo.jpg",
+#              description: description_text)
 
-Venue.create(name: "La Coquette",
-             email: "lacoquette@email.com",
-             address: "Calle de las Hileras, 14, 28013 Madrid",
-             photo: "venues/la-coquette.jpg",
-             description: description_text)
+# Venue.create(name: "La Coquette",
+#              email: "lacoquette@email.com",
+#              address: "Calle de las Hileras, 14, 28013 Madrid",
+#              photo: "venues/la-coquette.jpg",
+#              description: description_text)
+
+# Venue.create(name: "El Chico Feo",
+#              email: "elchicofeo@email.com",
+#              address: "Calle Covarrubias, 21, 28010 Madrid",
+#              photo: "venues/el-chico-feo.jpg",
+#              description: description_text)
 
 moby_dick = Venue.find_by_name("Moby Dick")
 honky_tonk = Venue.find_by_name("Honky Tonk")
