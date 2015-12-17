@@ -112,20 +112,20 @@ soul_station = Venue.find_by_name("Soul Station")
 la_boca_del_lobo = Venue.find_by_name("La Boca del Lobo")
 la_coquette = Venue.find_by_name("La Coquette")
 
-Concert.create(band_id: topper_chopper.id,
-               venue_id: honky_tonk.id,
-               date: "6/12/2015",
-               time: "20:00")
+# Concert.create(band_id: topper_chopper.id,
+#                venue_id: honky_tonk.id,
+#                date: "6/12/2015",
+#                time: "20:00")
 
-Concert.create(band_id: cardigan.id,
-               venue_id: moby_dick.id,
-               date: "15/12/2015",
-               time: "21:00")
+# Concert.create(band_id: cardigan.id,
+#                venue_id: moby_dick.id,
+#                date: "15/12/2015",
+#                time: "21:00")
 
-Concert.create(band_id: colors.id,
-               venue_id: honky_tonk.id,
-               date: "16/12/2015",
-               time: "20:00")
+# Concert.create(band_id: colors.id,
+#                venue_id: honky_tonk.id,
+#                date: "16/12/2015",
+#                time: "20:00")
 
 # Concert.create(band_id: cardigan.id,
 #                venue_id: moby_dick.id,
