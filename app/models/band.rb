@@ -10,6 +10,6 @@ class Band < ActiveRecord::Base
   end
 
   def list_outstanding_concerts
-    concerts.where('date >= ?', Date.today).length
+    concerts.where('date >= ?', Date.today)
   end
 end
