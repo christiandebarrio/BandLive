@@ -22,7 +22,6 @@ function putConcerts () {
   function onRequestSuccess (response) {
     printConcerts(response);
     putOutstandingConcerts(response, bandName);
-    fill_empty_days();
     console.log('Concerts of band_id: ', bandId,': ', response);
   }
 
@@ -58,6 +57,7 @@ function putConcerts () {
           <p class="event venue-name">' + concert.venue_name + '</p>\
         </div>')
     })
+    fill_empty_days();
   }
 }
 
