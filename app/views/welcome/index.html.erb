@@ -11,10 +11,11 @@
     </div>
     <div class="main-banner-form">
       <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:date, "Date", class: "input-label") %><br />
+        <%= label_tag(:date, "Date", class: "input-label") %><br/>
         <%= date_field_tag(:date, Date.today, class: "input-white") %>
         <%= text_field_tag(:location, nil, class: "input-white") %>
-        <%= submit_tag("Show me venues", class: "btn btn-green") %>
+        <%= link_to "Show me venues", "#fakelink", class: "btn btn-green" %>
+        <!-- <#%= submit_tag("Show me venues", class: "btn btn-green") %> -->
       <% end %>
     </div>
   </div>
