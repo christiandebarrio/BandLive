@@ -6,7 +6,7 @@ $(document).ready(function() {
     lng: parseFloat($('#venue-address').attr('data-longitude'))// position.coords.longitude
   };
 
-  $("#venue-address").text()
+  $("#venue-address").text();
 
   function createMap(position){
     var mapOptions = {
@@ -34,7 +34,7 @@ $(document).ready(function() {
         map.setCenter(place.geometry.location);
         map.setZoom(17);
       } else {
-        alert("The place has no location...?")
+        alert("The place has no location...?");
       }
       createMarker(place.geometry.location);
       savePositions(place.geometry.location);

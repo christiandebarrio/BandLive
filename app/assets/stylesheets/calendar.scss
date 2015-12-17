@@ -42,22 +42,6 @@
 #calendar .fc-content-skeleton .event {
 }
 
-#calendar .fc-day-number.fc-today { // today content
-  // color: $white;
-  // border-top: 4px solid $white;
-  // border-left: 4px solid $white;  
-}
-
-#calendar .fc-day-number.fc-today:hover { // today content hover
-  color: $grey_dark;
-  // border-top: 4px solid $white;
-  // border-left: 4px solid $white;  
-}
-
-#calendar .fc-bg .fc-today { // today bkg
-  background-color: $white;
-}
-
 #calendar .fc-day-number { // default day content
   color: $grey_light;
   font-size: 31pt;
@@ -153,4 +137,20 @@ td.fc-past { // past cells calendar border
 .calendar-venues-availables h1 {
   color: $pink;
   margin-bottom: 40px;
+}
+
+#calendar .fc-day-number.fc-today { // today content
+  // color: $white;
+  // border-top: 4px solid $white;
+  // border-left: 4px solid $white;  
+}
+
+#calendar .fc-day-number.fc-today:hover { // today content hover
+  color: $grey_dark;
+  // border-top: 4px solid $white;
+  // border-left: 4px solid $white;  
+}
+
+#calendar .fc-bg .fc-today { // today bkg
+  background-color: $white;
 }

@@ -1,13 +1,13 @@
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
 <section id="show-info" class="container">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div id="show-image">
       <%= image_tag @venue.generate_photo_url(@venue.name) %>
     </div>
   </div>
-  <div class="show-content col-md-8">
-    <%= image_tag "quaver.png", class: "quaver-icon", alt: "quaver" %>
+  <div class="show-content col-md-9">
+    <%= image_tag "quaver.png", class: "category-icon", alt: "quaver" %>
     <h2 class="show-category">Venue</h2>
     <h1 class="venues-name">
       <%= @venue.name %>

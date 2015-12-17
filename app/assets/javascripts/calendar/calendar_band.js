@@ -21,7 +21,7 @@ function putConcerts () {
   
   function onRequestSuccess (response) {
     printConcerts(response);
-    putOutstandingConcerts(response);
+    putOutstandingConcerts(response, bandName);
     fill_empty_days();
     console.log('Concerts of band_id: ', bandId,': ', response);
   }
@@ -33,86 +33,14 @@ function putConcerts () {
   request.done(onRequestSuccess);
   request.fail(onRequestFailure);
 
-  function putOutstandingConcerts (concerts) {
-    var divOustandingConcerts = $('#next-concerts');
-    var today = $(".fc-today").attr('data-date');
-    var outstandingConcerts = concerts.band_concerts.filter(function (concert) {
-      if(concert.date >= today) {
-        return concert;
-      };
-    });
+  
 
-    divOustandingConcerts.empty();
-
-    if(outstandingConcerts.length > 0) {
-      divOustandingConcerts.append('<h1>Next concerts</h1>');
-      
-      var html_message = '\
-            <div class="message-thunder">\
-              <img src="/assets/thunder-dark.png" alt="thunder"/>\
-            </div>\
-            <div class="message">\
-              <h2>WELL DONE! You have a few concerts coming.</h2>\
-              <h3>Share with friends in your social networks to get \
-              the best night live.</h3>\
-            </div>';     
-      divOustandingConcerts.append(html_message);
-
-      divOustandingConcerts.append('<ul class="list-next-concerts container"></ul>');
-
-      outstandingConcerts.forEach(function (concert) { 
-        var html =  '\
-          <li class="item-next-concerts container">\
-            <a href="/concerts/' + concert.id + '">\
-              <div class="next-concert-quaver">\
-                <img src="/assets/quaver-little.png" alt="quaver"/>\
-              </div>\
-              <div class="next-concert-data fix-data-date">\
-                <span class="title">Date</span>\
-                <p class="data">' + dateMonthDay(concert.date) + '</p>\
-              </div>\
-              <div class="next-concert-data fix-data-time">\
-                <span class="title hour">Time</span>\
-                <p class="data hour">' + concert.time + '</p>\
-              </div>\
-              <div class="next-concert-data">\
-                <span class="title">Venue</span>\
-                <p class="data">' + concert.venue_name + '</p>\
-              </div>\
-              <div class="share-social">\
-                <div class="wraper-social-btn">\
-                  <a href="https://twitter.com/share" \
-                    class="twitter-share-button" \
-                    data-url="http://localhost3000/concerts/' + concert.id + '" \
-                    data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
-                    data-hashtags="' + bandName + ', livemusic">Tweet</a>\
-                </div>\
-                <div class="wraper-social-btn">\
-                  <div class="fb-share-button" \
-                    data-href="https://localhost3000/concerts/' + concert.id + '" \
-                    data-layout="button">\
-                  </div>\
-                </div>\
-              </div>\
-            </a>\
-          </li>';
-        $('.list-next-concerts').append(html);
-      });
-      var scriptFacebook ='\
-        <div id="fb-root"></div>\
-        <script>(function(d, s, id) {\
-          var js, fjs = d.getElementsByTagName(s)[0];\
-          if (d.getElementById(id)) return;\
-          js = d.createElement(s); js.id = id;\
-          js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.5";\
-          fjs.parentNode.insertBefore(js, fjs);\
-        }(document, "script", "facebook-jssdk"));</script>';
-      var scriptTweeter = "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+':\//platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>";
-      $('.list-next-concerts').append(scriptFacebook);
-      $('.list-next-concerts').append(scriptTweeter);
-
-    };
-  }
+// <div class="wraper-social-btn">\
+//   <div class="fb-share-button" \
+//     data-href="https://localhost3000/concerts/' + concert.id + '" \
+//     data-layout="button">\
+//   </div>\
+// </div>\
 
   // <a href="" class="btn btn-green btn-share">Share</a>\
 
@@ -131,6 +59,72 @@ function putConcerts () {
         </div>')
     })
   }
+}
+
+function putOutstandingConcerts (concerts, bandName) {
+  var divOustandingConcerts = $('#next-concerts');
+  var outstandingConcerts = concerts.band_concerts.filter(function (concert) {
+    if(concert.date >= today) {
+      return concert;
+    };
+  });
+
+  divOustandingConcerts.empty();
+
+  if(outstandingConcerts.length > 0) {
+    divOustandingConcerts.append('<h1>Next concerts</h1>');
+    
+    var html_message = '\
+          <div class="message-thunder">\
+            <img src="/assets/thunder-dark.png" alt="thunder"/>\
+          </div>\
+          <div class="message">\
+            <h2>WELL DONE! You have a few concerts coming.</h2>\
+            <h3>Share with friends in your social networks to get \
+            the best night live.</h3>\
+          </div>';     
+    divOustandingConcerts.append(html_message);
+
+    divOustandingConcerts.append('<ul class="list-next-concerts container"></ul>');
+
+    outstandingConcerts.forEach(function (concert) { 
+      var html =  '\
+        <li class="item-next-concerts container">\
+          <a href="/concerts/' + concert.id + '">\
+            <div class="next-concert-quaver">\
+              <img src="/assets/quaver-little.png" alt="quaver"/>\
+            </div>\
+            <div class="next-concert-data fix-data-date">\
+              <span class="title">Date</span>\
+              <p class="data">' + dateMonthDay(concert.date) + '</p>\
+            </div>\
+            <div class="next-concert-data fix-data-time">\
+              <span class="title hour">Time</span>\
+              <p class="data hour">' + concert.time + '</p>\
+            </div>\
+            <div class="next-concert-data">\
+              <span class="title">Venue</span>\
+              <p class="data">' + concert.venue_name + '</p>\
+            </div>\
+            <div class="share-social">\
+              <div class="wraper-social-btn">\
+                <a href="https://twitter.com/share" \
+                  class="twitter-share-button" \
+                  data-url="http://localhost3000/concerts/' + concert.id + '" \
+                  data-text="' + bandName + ' next concert ' + dateMonthDay(concert.date) + ' in ' + concert.venue_name + '" \
+                  data-hashtags="' + bandName + ', livemusic">Tweet</a>\
+              </div>\
+            </div>\
+          </a>\
+        </li>';
+      $('.list-next-concerts').append(html);
+    });
+
+    twttr.widgets.load(
+      document.getElementById("next-concerts")
+    );
+
+  };
 }
 
 function putVenuesAvailables (date) {
